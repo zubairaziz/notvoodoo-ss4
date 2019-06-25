@@ -14,7 +14,11 @@
 </head>
 <body>
 
-    $Layout
+    <% include Navbar %>
+
+    <main class="content container">
+        $Layout
+    </main>
 
     <script src="$ThemeDir/dist/js/index.js"></script>
 

@@ -1,0 +1,20 @@
+# SilverStripe\Blog\Model\BlogPost:
+#   extensions:
+#     - BlogPostExtension
+#     - BlogNotificationExtension
+
+# SilverStripe\Blog\Model\Blog:
+#   extensions:
+#     - BlogExtension
+
+# SilverStripe\Blog\Model\BlogCategory:
+#   extensions:
+#     - BlogCategoryExtension
+
+# SilverStripe\ORM\DataObject:
+#   extensions:
+#     - DataObjectExtension
+
+Silverstripe\SiteConfig\SiteConfig:
+  extensions:
+    - CustomSiteConfig
