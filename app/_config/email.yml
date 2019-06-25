@@ -1,0 +1,16 @@
+---
+Name: myemailconfig
+After:
+  - '#emailconfig'
+---
+SilverStripe\Core\Injector\Injector:
+  Swift_Transport:
+    class: Swift_SmtpTransport
+    properties:
+      Host: '`MAIL_HOST`'
+      Port: '`MAIL_PORT`'
+      Encryption: tls
+    calls:
+      Username: [ setUsername, ['`MAIL_USER`'] ]
+      Password: [ setPassword, ['`MAIL_PASS`'] ]
+      AuthMode: [ setAuthMode, ['`login`'] ]
