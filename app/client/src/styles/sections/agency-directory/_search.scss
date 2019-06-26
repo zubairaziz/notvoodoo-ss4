@@ -1,0 +1,39 @@
+.agency-header {
+  padding-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $light-gray;
+
+  @include breakpoint(tablet) {
+    padding-bottom: 30px;
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.agency-search {
+  margin: 0;
+  flex: 1 0 0;
+  max-width: 950px;
+
+  @include breakpoint(large) {
+    margin-left: 30px;
+  }
+
+  .styled-input-group input {
+    text-align: left;
+  }
+
+  .styled-dropdown--rounded {
+    .edd-value {
+      text-align: left;
+    }
+  }
+
+  .page-search__field:last-child {
+    margin: 0;
+  }
+}

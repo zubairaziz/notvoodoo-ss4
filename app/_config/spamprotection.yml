@@ -1,0 +1,9 @@
+---
+Name: appspamprotection
+---
+
+SilverStripe\SpamProtection\Extension\FormSpamProtection:
+  default_spam_protector: AkismetSpamProtector
+
+SilverStripe\Akismet\AkismetSpamProtector:
+  # api_key: a79ae2901ac1

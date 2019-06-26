@@ -1,0 +1,7 @@
+---
+Name: appsearch
+---
+
+SilverStripe\FullTextSearch\Search\FullTextSearch:
+  indexes:
+    - App\Search\PageSearchIndex

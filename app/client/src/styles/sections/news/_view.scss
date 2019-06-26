@@ -1,0 +1,64 @@
+.news-content {
+  @include panel-padding;
+
+  @include breakpoint(tablet) {
+    display: flex;
+  }
+
+  &__thumbnail {
+    order: 2;
+    position: relative;
+
+    @include breakpoint(medium down) {
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(tablet) {
+      width: 25%;
+      flex-shrink: 0;
+      margin-top: -120px;
+    }
+
+    @include breakpoint(large) {
+      margin-top: -160px;
+    }
+
+    @include breakpoint(xlarge) {
+      margin-top: -200px;
+    }
+
+    @include breakpoint(xxlarge) {
+      width: 420px;
+      margin-top: -250px;
+    }
+
+    &:before {
+      @include breakpoint(tablet) {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: $medium-gray;
+        position: absolute;
+        top: 0;
+        left: calc(50% - 20px);
+        z-index: 0;
+      }
+    }
+
+    img {
+      display: block;
+      border-radius: 10px;
+      position: relative;
+    }
+  }
+
+  &__inner {
+    @include breakpoint(tablet) {
+      padding-right: 5%;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding-right: 100px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="11px" viewBox="0 0 20 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>down-arrow copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Standards" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
+        <g transform="translate(-610.000000, -448.000000)" fill-rule="nonzero" id="down-arrow-copy">
+            <g transform="translate(610.000000, 448.000000)">
+                <path d="M19.7953645,0.212560386 C19.519711,-0.0708534622 19.0717741,-0.0708534622 18.7961207,0.212560386 L10.0096665,9.26409018 L1.20598391,0.212560386 C0.930330446,-0.0708534622 0.482393565,-0.0708534622 0.206740099,0.212560386 C-0.0689133664,0.495974235 -0.0689133664,0.956521739 0.206740099,1.23993559 L9.49281622,10.7874396 C9.63064295,10.9291465 9.80292637,11 9.99243812,11 C10.1647215,11 10.3542333,10.9291465 10.49206,10.7874396 L19.7781362,1.23993559 C20.071018,0.956521739 20.071018,0.495974235 19.7953645,0.212560386 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

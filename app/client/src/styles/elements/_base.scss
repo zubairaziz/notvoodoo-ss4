@@ -1,0 +1,26 @@
+.panel {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-title {
+  @include rfs(55);
+
+  &--centered {
+    text-align: center;
+  }
+
+  &--light {
+    color: $white;
+  }
+}
+
+.panel-content {
+  &--centered {
+    text-align: center;
+  }
+
+  &--large {
+    @include rfs(25);
+  }
+}

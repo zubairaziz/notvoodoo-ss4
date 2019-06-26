@@ -1,0 +1,123 @@
+.element-providerspotlight {
+  @include panel-padding;
+
+  .panel-title {
+    @include rfs(55);
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.provider-spotlight {
+  @include panel-padding;
+
+  @include breakpoint(tablet) {
+    display: flex;
+  }
+
+  &__left {
+    margin-bottom: 30px;
+
+    @include breakpoint(tablet) {
+      width: 35%;
+      max-width: 450px;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .btn {
+      margin: auto;
+    }
+  }
+
+  &__image {
+    margin-bottom: 30px;
+
+    img {
+      border-radius: 6px;
+      box-shadow: 0 2px 10px 0 rgba(black, 0.35);
+    }
+  }
+}
+
+.provider-spotlight-item {
+  width: 100%;
+
+  &__top {
+    @include font-serif;
+    border-bottom: 1px solid $secondary-color;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include breakpoint(large) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__name {
+    @include rfs(35);
+    margin: 0 20px 0 0;
+    background: $secondary-color;
+    font-style: italic;
+    color: $white;
+    padding: 5px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    @include breakpoint(tablet) {
+      border-top-left-radius: 0;
+      padding: 5px 40px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 5px 60px;
+    }
+  }
+
+  &__agency {
+    font-size: 18px;
+    color: $secondary-color;
+    line-height: 1.2;
+
+    @include breakpoint(tablet) {
+      @include rfs(25);
+    }
+  }
+
+  &__content {
+    @include breakpoint(tablet) {
+      padding-left: 35px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding-left: 55px;
+    }
+
+    .copy {
+      max-width: 640px;
+    }
+  }
+
+  &__checkmarks {
+    @include list-reset;
+    border-top: 1px solid $light-gray;
+    padding-top: 15px;
+    margin-top: 30px;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      margin: 10px 0;
+      max-width: 680px;
+
+      [data-icon] {
+        color: $secondary-color;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

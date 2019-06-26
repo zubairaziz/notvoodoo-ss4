@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="21px" viewBox="0 0 25 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Copy-2" transform="translate(-532.000000, -1324.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-4-Copy-3" transform="translate(510.000000, 1300.000000)">
+                <g id="noun_Arrow_1167539_000000-Copy" transform="translate(34.500000, 34.500000) rotate(-180.000000) translate(-34.500000, -34.500000) translate(22.000000, 24.000000)">
+                    <path d="M25,10.5 C25,10.0591603 24.6329527,9.69847328 24.1843393,9.69847328 L3.05872757,9.69847328 L11.5823817,1.36259542 C11.908646,1.04198473 11.908646,0.561068702 11.5823817,0.240458015 C11.2561175,-0.0801526718 10.766721,-0.0801526718 10.4404568,0.240458015 L0.57096248,9.9389313 L0,10.5 L0.57096248,11.0610687 L10.4404568,20.759542 C10.766721,21.0801527 11.2561175,21.0801527 11.5823817,20.759542 C11.908646,20.4389313 11.908646,19.9580153 11.5823817,19.6374046 L3.05872757,11.3015267 L24.1843393,11.3015267 C24.6329527,11.3015267 25,10.9408397 25,10.5 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

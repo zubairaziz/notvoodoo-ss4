@@ -1,0 +1,49 @@
+.subscribe-modal {
+  width: 100%;
+  padding: 20px;
+
+  @include breakpoint(tablet) {
+    padding: 30px;
+    width: 85vw;
+  }
+
+  @include breakpoint(large) {
+    padding: 60px;
+  }
+
+  @include breakpoint(xlarge) {
+    padding: 80px;
+  }
+
+  &__title {
+    @include font-serif;
+    @include rfs(55);
+    font-weight: normal;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 0.5em;
+    }
+
+    em {
+      font-weight: 600;
+    }
+  }
+
+  form {
+    padding-top: 15px;
+
+    [type=submit] {
+      margin-top: 40px;
+      max-width: 100%;
+    }
+  }
+
+  .form-success-message {
+    font-weight: bold;
+  }
+
+  .pristine-error,
+  .form-error-message {
+    margin-top: 10px;
+  }
+}

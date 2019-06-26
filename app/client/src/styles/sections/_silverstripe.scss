@@ -1,0 +1,41 @@
+.page-security,
+.pagetype-errorpage {
+  &.has-page-container .site-header--fixed + .site-wrapper .page-header {
+    @include breakpoint(large) {
+      padding: 120px 0 80px;
+    }
+  }
+
+  .btn-toolbar {
+    @include breakpoint(tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      flex-shrink: 0;
+      margin: 20px 0 0;
+
+      @include breakpoint(tablet) {
+        margin: 0 0 0 100px;
+      }
+    }
+
+    [type=submit] {
+      min-width: 300px;
+      max-width: none;
+      width: auto;
+    }
+  }
+}
+
+.pagetype-errorpage {
+  .page-container {
+    @include panel-padding;
+
+    @include breakpoint(xlarge) {
+      padding: 60px 0;
+    }
+  }
+}

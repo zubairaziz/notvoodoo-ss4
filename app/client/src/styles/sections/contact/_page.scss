@@ -1,0 +1,102 @@
+.pagetype-contactpage {
+  .page-container {
+    @include panel-padding($top: false);
+  }
+}
+
+.contact-content {
+  position: relative;
+
+  @include breakpoint(large) {
+    min-height: 860px;
+  }
+
+  @include breakpoint(xlarge) {
+    padding-right: 60px;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding-right: 80px;
+  }
+
+  &:after {
+    @include breakpoint(large) {
+      content: '';
+      height: 70%;
+      width: 1px;
+      background: $medium-gray;
+      position: absolute;
+      right: -45px;
+      top: 30px;
+    }
+
+    @include breakpoint(xlarge) {
+      right: 0;
+    }
+  }
+
+  &__inner {
+    margin-bottom: 30px;
+  }
+}
+
+.contact-sidebar {
+  margin-top: 60px;
+
+  @include breakpoint(tablet) {
+    margin-top: 30px;
+  }
+
+  @include breakpoint(large only) {
+    padding-left: 40px;
+  }
+
+  &__logo {
+    width: 185px;
+  }
+
+  &__details {
+    @include rfs(25);
+    margin: 2.5rem 0;
+
+    dt {
+      display: flex;
+      align-items: center;
+      color: $accent-color;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 0.1em;
+
+      span {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        background: $accent-color;
+        color: $white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+      }
+
+      [data-icon] {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    dd {
+      margin: 0 0 2rem;
+      padding-left: 40px;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      a {
+        @include anchor-hover($black);
+        font-weight: 300;
+      }
+    }
+  }
+}

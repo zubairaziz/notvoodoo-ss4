@@ -1,0 +1,14 @@
+@import '~foundation-sites/scss/foundation';
+
+@include foundation-global-styles;
+
+@include foundation-xy-grid-classes(
+    $base-grid: true,
+    $margin-grid: true,
+    $padding-grid: false,
+    $block-grid: true,
+    $collapse: false,
+    $offset: false,
+    $vertical-grid: false,
+    $frame-grid: false
+);

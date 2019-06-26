@@ -1,0 +1,307 @@
+.edd-root {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  user-select: none;
+  color: $accent-color;
+  font-weight: bold;
+}
+
+.edd-root-disabled {
+  color: $dark-gray;
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.edd-head {
+  overflow: hidden;
+  border: 2px solid $accent-color;
+  transition: box-shadow 200ms, border-color 150ms;
+  background: $white;
+  border-radius: 8px;
+}
+
+.edd-root-invalid .edd-head {
+  box-shadow: 0 0 5px rgba(255, 105, 105, 0.671);
+}
+
+.edd-value {
+  width: calc(100% - 40px);
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 20px;
+
+  @include breakpoint(large) {
+    padding: 15px 20px;
+  }
+}
+
+.edd-arrow {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  top: calc(50% - 4px);
+  right: 20px;
+  transition: transform 150ms;
+}
+
+.edd-arrow::before {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-right: 1px solid $accent-color;
+  border-bottom: 1px solid $accent-color;
+  top: -5px;
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: 50% 25%;
+}
+
+.edd-root-open .edd-arrow {
+  transform: rotate(180deg);
+}
+
+.edd-value,
+.edd-option,
+.edd-group-label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.edd-root:not(.edd-root-disabled),
+.edd-option {
+  cursor: pointer;
+}
+
+.styled-dropdown select {
+  visibility: hidden;
+}
+
+.styled-dropdown .edd-select {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  left: -100%;
+  top: 0;
+  pointer-events: none;
+  visibility: visible;
+}
+
+.edd-root-native .edd-select {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: all;
+}
+
+.edd-body {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  border: 1px solid $white;
+  pointer-events: none;
+  overflow: hidden;
+  margin: 8px 0;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  background: white;
+}
+
+.edd-root-open .edd-body {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+  transition: opacity 200ms, transform 100ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.edd-root-open-above .edd-body {
+  bottom: 100%;
+}
+
+.edd-root-open-below .edd-body {
+  top: 100%;
+}
+
+.edd-items-list {
+  overflow: auto;
+  max-height: 0;
+  transition: max-height 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-overflow-scrolling: touch;
+}
+
+.edd-group-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 12px 8px 4px;
+  color: #999;
+}
+
+.edd-group-has-label {
+  border-bottom: 1px solid #eee;
+}
+
+.edd-option {
+  padding: 8px 20px;
+  font-weight: normal;
+}
+
+.edd-group-has-label .edd-option {
+  padding-left: 20px;
+}
+
+.edd-option-selected {
+  color: $accent-color;
+}
+
+.edd-option-focused:not(.edd-option-disabled) {
+  background: $accent-color;
+  color: $white;
+}
+
+.edd-option-disabled,
+.edd-group-disabled .edd-option {
+  cursor: default;
+  color: #ccc;
+}
+
+.styled-dropdown {
+  .edd-root {
+    display: block;
+    max-width: none;
+  }
+
+  &--rounded {
+    .edd-head {
+      border-radius: 25px;
+      border-color: transparent;
+    }
+
+    &-border {
+      .edd-head {
+        border-color: $accent-color;
+
+        &:hover {
+          border-color: lighten($accent-color, 15%);
+        }
+      }
+    }
+
+    &-border-light {
+      .edd-head {
+        border-color: $medium-gray;
+
+        &:hover {
+          border-color: lighten($accent-color, 15%);
+        }
+      }
+    }
+
+    .edd-value {
+      color: darken($medium-gray, 10%);
+      font-weight: normal;
+      padding: 13px 20px;
+      line-height: 24px;
+      text-align: center;
+      width: calc(100% - 60px);
+
+      @include breakpoint(large) {
+        padding: 15px 20px;
+        line-height: 28px;
+      }
+
+      &:hover:after {
+        background: lighten($accent-color, 10%);
+      }
+
+      &:after {
+        content: '';
+        width: 60px;
+        height: 100%;
+        background: $accent-color;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: background 0.2s ease-in-out;
+      }
+    }
+
+    .edd-arrow {
+      &:before {
+        border-right-color: $white;
+        border-bottom-color: $white;
+        right: 4px;
+        transform-origin: 50%;
+      }
+    }
+
+    .edd-body {
+      border-radius: 15px;
+    }
+  }
+
+  &--large {
+    .edd-value {
+      padding: 10px 20px;
+      line-height: 24px;
+
+      @include breakpoint(large) {
+        padding: 15px 20px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  &--form {
+    .edd-root {
+      color: $black;
+      font-weight: normal;
+    }
+
+    .edd-head {
+      overflow: hidden;
+      border: none;
+      border-bottom: 1px solid $medium-gray;
+      transition: border-color 0.4s ease-in-out;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .edd-root-focused .edd-head {
+      border-color: $accent-color;
+    }
+
+    &.has-error .edd-head {
+      border-color: $alert-color;
+    }
+
+    .edd-value {
+      line-height: 1.15;
+      width: calc(100% - 30px);
+      padding: 13px 0;
+
+      @include breakpoint(xxlarge) {
+        padding: 12px 0;
+      }
+    }
+
+    .edd-arrow {
+      right: 5px;
+    }
+
+    .edd-arrow::before {
+      border-right: 1px solid darken($medium-gray, 10%);
+      border-bottom: 1px solid darken($medium-gray, 10%);
+    }
+  }
+}

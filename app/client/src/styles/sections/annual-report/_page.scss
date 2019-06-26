@@ -1,0 +1,35 @@
+.pagetype-annualreportpage {
+  .site-wrapper {
+    min-height: 0;
+  }
+
+  article iframe {
+    display: block;
+    min-height: 500px;
+
+    @include breakpoint(tablet) {
+      min-height: 650px;
+    }
+
+    @include breakpoint(xlarge) {
+      min-height: 800px;
+    }
+
+    @include breakpoint(xxlarge) {
+      min-height: 950px;
+    }
+  }
+
+  .download-report {
+    text-align: center;
+    margin: 30px 0;
+
+    @include breakpoint(large) {
+      margin: 60px 0;
+    }
+
+    .btn {
+      max-width: 360px;
+    }
+  }
+}

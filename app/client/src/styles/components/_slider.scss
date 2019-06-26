@@ -1,0 +1,157 @@
+.slider {
+  $self: &;
+
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.2s ease-in-out;
+
+  &.flickity-enabled {
+    opacity: 1;
+  }
+
+  .flickity-page-dots {
+    position: relative;
+    bottom: auto;
+    padding: 20px 0;
+    z-index: 5;
+    max-width: calc(100% - 100px);
+    margin: 20px auto auto;
+
+    .dot {
+      border: 1px solid $light-gray;
+      background: $light-gray;
+      opacity: 1;
+      height: 14px;
+      width: 14px;
+      margin: 0 5px;
+
+      &.is-selected {
+        background: $accent-color;
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  .flickity-prev-next-button {
+    background: transparent;
+    border-radius: 0;
+
+    @include breakpoint(tablet down) {
+      top: auto;
+      bottom: 0;
+      transform: none;
+      z-index: 10;
+    }
+
+    @include breakpoint(large) {
+      width: 80px;
+      height: 80px;
+      top: calc(50% - 50px);
+    }
+
+    &.previous {
+      left: 0;
+
+      @include breakpoint(large) {
+        left: -60px;
+      }
+
+      @include breakpoint(xlarge) {
+        left: -80px;
+      }
+    }
+
+    &.next {
+      right: 0;
+
+      @include breakpoint(large) {
+        right: -60px;
+      }
+
+      @include breakpoint(xlarge) {
+        right: -80px;
+      }
+    }
+
+    .flickity-button-icon {
+      color: $dark-gray;
+    }
+
+    &:hover {
+      .flickity-button-icon {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__slide {
+    width: 100%;
+  }
+
+  &.is-single-slide {
+    .flickity-page-dots {
+      display: none;
+    }
+
+    .flickity-prev-next-button {
+      display: none;
+    }
+  }
+
+  &--contain {
+    .flickity-prev-next-button {
+      bottom: auto;
+      top: calc(50% - 22px);
+
+      @include breakpoint(large) {
+        top: 50%;
+      }
+
+      &.previous {
+        left: 0;
+
+        @include breakpoint(large) {
+          left: 0;
+        }
+      }
+
+      &.next {
+        right: 0;
+
+        @include breakpoint(large) {
+          right: 0;
+        }
+      }
+
+      .flickity-button-icon {
+        color: $white;
+      }
+    }
+
+    .flickity-page-dots {
+      max-width: none;
+      margin: 0;
+      position: absolute;
+      bottom: 20px;
+      padding: 0;
+
+      @include breakpoint(xxlarge) {
+        bottom: 30px;
+      }
+    }
+  }
+
+  &--grouped {
+    #{$self}__slide {
+      @include breakpoint(tablet) {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 50%;
+      }
+
+      @include breakpoint(large) {
+        width: percentage(1 / 3);
+      }
+    }
+  }
+}

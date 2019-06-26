@@ -1,0 +1,285 @@
+.element-teamdepartment {
+  @include panel-padding;
+
+  &:not(.panel--last):after {
+    content: '';
+    border-bottom: 1px solid $medium-gray;
+    width: calc(100% - 20px);
+    max-width: calc(#{$global-width} - 60px);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include breakpoint(tablet) {
+      width: calc(100% - 40px);
+    }
+
+    @include breakpoint(large) {
+      width: calc(100% - 50px);
+    }
+
+    @include breakpoint(xlarge) {
+      width: calc(100% - 60px);
+    }
+  }
+
+  .panel-title {
+    @include rfs(55);
+    @include font-serif;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 30px;
+
+    strong {
+      font-style: italic;
+    }
+  }
+
+  .cell {
+    margin-bottom: 60px;
+  }
+
+  .names-only {
+    .cell {
+      margin-bottom: 30px;
+    }
+
+    .panel-title {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.team-department-top {
+  margin-bottom: 30px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 45px;
+  }
+
+  @include breakpoint(xlarge) {
+    margin-bottom: 60px;
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+.team-member {
+  $self: &;
+
+  box-shadow: 0 2px 10px 0 rgba(black, 0.5);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: $primary-color;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+
+  @include breakpoint(tablet) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 20px 0 rgba(black, 0.5);
+      background: lighten($primary-color, 5%);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &__details {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 20px 30px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 60px 20px 40px;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding: 70px 20px 50px;
+    }
+  }
+
+  &__image + &__details {
+    border-top: 2px solid $white;
+  }
+
+  &__contacts {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__contact {
+    width: 60px;
+    height: 60px;
+    background: $white;
+    color: $secondary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 6px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: $secondary-color;
+      color: $white;
+    }
+
+    [data-icon] {
+      margin-left: 1px;
+    }
+
+    [data-icon="linkedin"] {
+      width: 22px;
+      height: 21px;
+    }
+  }
+
+  &__name {
+    @include rfs(30);
+    color: $white;
+    line-height: 1.1;
+    margin: 0 0 0.2em;
+  }
+
+  &--name-only {
+    border-radius: 5px;
+
+    #{$self}__image {
+      display: none;
+    }
+
+    #{$self}__contacts {
+      display: none;
+    }
+
+    #{$self}__details {
+      padding-top: 30px;
+      border: none;
+
+      @include breakpoint(xlarge) {
+        padding-top: 40px;
+      }
+
+      @include breakpoint(xxlarge) {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  &__job {
+    line-height: 1.4;
+  }
+}
+
+.team-modal {
+  width: 100%;
+  padding: 20px;
+
+  @include breakpoint(tablet) {
+    padding: 30px;
+    width: 85vw;
+  }
+
+  @include breakpoint(large) {
+    padding: 60px;
+  }
+}
+
+.team-bio {
+  @include breakpoint(tablet) {
+    display: flex;
+  }
+
+  &__photo-contacts {
+    margin-bottom: 30px;
+
+    @include breakpoint(tablet) {
+      flex-shrink: 0;
+      width: 35%;
+      margin: 0 40px 0 0;
+    }
+
+    @include breakpoint(xlarge) {
+      margin-right: 60px;
+    }
+  }
+
+  &__photo {
+    margin-bottom: 20px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__top {
+    border-bottom: 1px solid $accent-color;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    @include rfs(48);
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  &__job {
+    @include rfs(25);
+    color: $primary-color;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -10px;
+
+    .team-member__contact {
+      background: $accent-color;
+      color: $white;
+
+      @include breakpoint(tablet down) {
+        width: 50px;
+        height: 50px;
+      }
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}

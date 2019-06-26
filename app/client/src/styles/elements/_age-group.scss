@@ -1,0 +1,176 @@
+.element-agegroup {
+  @include panel-padding;
+
+  [id*="map-pin-"] {
+    display: none;
+  }
+  [id*="highlight-"] {
+    display: none;
+  }
+}
+
+.age-group-wrapper {
+  @include breakpoint(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.age-group {
+  @include breakpoint(tablet down) {
+    margin-bottom: 30px;
+  }
+
+  .panel-title {
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0.75em;
+
+    strong {
+      display: block;
+    }
+  }
+
+  &__ages {
+    @include list-reset;
+    @include rfs(25);
+
+    li {
+      display: flex;
+      align-items: baseline;
+      margin: 10px 0;
+
+      [data-icon] {
+        color: $secondary-color;
+        margin-right: 10px;
+        position: relative;
+        top: 1px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.program-county-map-wrapper {
+  width: 100%;
+  max-width: 690px;
+  margin: auto;
+
+  @include breakpoint(tablet) {
+    min-height: 540px;
+  }
+
+  @include breakpoint(large) {
+    min-height: 420px;
+    flex-shrink: 0;
+    width: 55%;
+    margin-right: 0;
+  }
+
+  @include breakpoint(xlarge) {
+    min-height: 500px;
+  }
+
+  @include breakpoint(xxlarge) {
+    min-height: 540px;
+  }
+}
+
+.program-county-map {
+  position: relative;
+
+  &:before {
+    content: '';
+    padding-top: percentage(707 / 927);
+    display: block;
+  }
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    @include breakpoint(medium down) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.program-county-info {
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(tablet) {
+    width: 55%;
+    margin-top: -20%;
+  }
+
+  &__county-wrapper {
+    margin-bottom: 10px;
+  }
+
+  &__county {
+    @include rfs(35);
+    color: $secondary-color;
+  }
+
+  &__counties {
+    @include rfs(24);
+    background: $secondary-color;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease-in-out;
+    margin-top: 30px;
+
+    @include breakpoint(tablet) {
+      margin-top: 10px;
+    }
+
+    &:hover {
+      background: lighten($secondary-color, 5%);
+    }
+
+    &:after {
+      content: '+';
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      position: relative;
+      top: -1px;
+      line-height: 1;
+      width: 24px;
+      text-align: center;
+    }
+
+    &.is-active:after {
+      content: '-';
+    }
+  }
+
+  #map-county-list {
+    @include list-reset;
+    padding: 10px 10px;
+
+    li {
+      @include rfs(20);
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      margin: 5px 0;
+
+      [data-icon] {
+        color: $secondary-color;
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

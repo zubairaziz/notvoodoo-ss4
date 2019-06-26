@@ -1,0 +1,102 @@
+.element-ataglanceleadin {
+  @include panel-padding;
+  position: relative;
+
+  .cta-group {
+    padding-top: 30px;
+
+    @include breakpoint(large) {
+      padding-top: 60px;
+    }
+  }
+
+  .bg-icon-wrapper {
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: percentage(154 / 1066);
+    max-width: 1066px;
+    margin: 0 auto -5vw;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+      margin-bottom: -3vw;
+    }
+
+    @include breakpoint(xxlarge) {
+      margin-bottom: -70px;
+    }
+  }
+
+  .bg-site-logo {
+    background: $white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    width: 200px;
+    height: 200px;
+
+    @include breakpoint(tablet) {
+      width: 300px;
+      height: 300px;
+      top: -90px;
+    }
+
+    @include breakpoint(xlarge) {
+      width: 400px;
+      height: 400px;
+      top: -120px;
+    }
+
+    svg {
+      width: 50%;
+      margin-top: 15%;
+    }
+  }
+}
+
+.glance-lead-in-stats-items {
+  @include list-reset;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(tablet) {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .counter {
+    text-align: center;
+    padding: 10px 0;
+
+    @include breakpoint(tablet) {
+      padding: 0 20px;
+      width: percentage(1 / 3);
+    }
+
+    @include breakpoint(xxlarge) {
+      padding: 0 30px;
+    }
+
+    &__value {
+      @include rfs(80);
+      font-weight: bold;
+      line-height: 1;
+      color: $secondary-color;
+      margin-bottom: 0.1em;
+    }
+
+    &__title {
+      max-width: 350px;
+      margin: auto;
+      font-weight: normal;
+    }
+  }
+}

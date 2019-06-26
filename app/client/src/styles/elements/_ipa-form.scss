@@ -1,0 +1,32 @@
+.element-ipaform {
+  &:not(.panel--first) {
+    @include panel-arrow(down, $white);
+  }
+
+  @include panel-padding;
+  background: #f9f9f9;
+
+  .element-top {
+    text-align: center;
+    max-width: 950px;
+    margin: auto;
+  }
+
+  .panel-title {
+    color: $secondary-color;
+  }
+
+  .form-success-message {
+    padding-top: 30px;
+    text-align: center;
+  }
+}
+
+.ipa-form-element-wrapper {
+  max-width: 1150px;
+  margin: auto;
+
+  [type=submit] {
+    margin: auto;
+  }
+}

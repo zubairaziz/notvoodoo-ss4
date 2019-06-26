@@ -1,0 +1,15 @@
+.programs-search {
+  @include breakpoint(tablet) {
+    padding-top: 30px;
+  }
+
+  .page-search__inner {
+    @include breakpoint(tablet) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .page-search-results-heading {
+    width: 100%;
+  }
+}

@@ -1,0 +1,309 @@
+.site-header {
+  padding: 20px 0;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: $white;
+  transition: background-color 0.1s ease-in-out, height 0.2s ease-in-out;
+
+  @include breakpoint(large) {
+    padding: 40px 0;
+    height: 105px;
+  }
+
+  &--fixed {
+    background: transparent;
+    position: fixed;
+
+    @include breakpoint(xxlarge) {
+      height: 120px;
+    }
+
+    & + .site-wrapper .page-header {
+      padding: 70px 0;
+
+      @include breakpoint(large) {
+        padding: 155px 0 105px;
+      }
+
+      @include breakpoint(xxlarge) {
+        padding: 180px 0 120px;
+      }
+    }
+  }
+
+  &.is-stuck {
+    background: $white;
+    box-shadow: 0 2px 5px 0 rgba(black, 0.2);
+    position: fixed;
+
+    @include breakpoint(large) {
+      padding: 28px 0 22px;
+      height: 80px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 26px 0 24px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @include breakpoint(large) {
+      justify-content: center;
+    }
+  }
+
+  .grid-container {
+    max-width: 2000px;
+  }
+}
+
+.site-header-logo {
+  @include text-hide;
+  display: block;
+  width: 100px;
+  position: relative;
+  z-index: 1;
+  transition: width 0.2s ease-in-out;
+
+  @include breakpoint(large) {
+    position: absolute;
+    left: 0;
+    width: 145px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include breakpoint(xxlarge) {
+    width: 194px;
+  }
+
+  .site-header--fixed & {
+    .light {
+      display: block;
+    }
+
+    .dark {
+      display: none;
+    }
+  }
+
+  &,
+  .site-header.is-stuck & {
+    .light {
+      display: none;
+    }
+
+    .dark {
+      display: block;
+    }
+  }
+
+  .site-header:not(.site-header--fixed) &,
+  .site-header.is-stuck & {
+    @include breakpoint(large) {
+      width: 145px;
+    }
+  }
+}
+
+.site-search {
+  height: 55px;
+  width: 100%;
+  z-index: 10;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(large) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 200px;
+    padding-right: 185px;
+  }
+
+  @include breakpoint(xlarge) {
+    padding-right: 225px;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding-left: 320px;
+  }
+
+  &--desktop {
+    @include breakpoint(tablet down) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+
+  .js-search-active & {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &__form {
+    width: 100%;
+
+    @include breakpoint(large) {
+      width: calc(100% - 60px);
+    }
+
+    &.has-error input {
+      &,
+      &:hover,
+      &:focus {
+        border-color: $alert-color;
+      }
+    }
+  }
+
+  &-input-group {
+    @include placeholder {
+      color: rgba($white, 0.5);
+    }
+    display: flex;
+    width: 100%;
+
+    input {
+      color: $white;
+      background: none;
+      padding: 13px 13px 13px 8px;
+      width: 100%;
+      display: block;
+      border: none;
+      border-bottom: 1px solid $white;
+      min-height: 48px;
+      transition: border-color 0.2s ease-in-out;
+
+      @include breakpoint(large) {
+        padding: 8px 8px 8px 5px;
+        min-height: 0;
+      }
+
+      &:focus,
+      &:hover {
+        border-color: $accent-color;
+      }
+    }
+
+    button {
+      color: $white;
+      flex-shrink: 0;
+      width: 48px;
+
+      @include breakpoint(large) {
+        color: $accent-color;
+      }
+
+      &:hover [data-icon] {
+        color: $accent-color;
+      }
+
+      [data-icon] {
+        width: 24px;
+        height: 24px;
+
+        @include breakpoint(large) {
+          width: 26px;
+          height: 32px;
+        }
+
+        @include breakpoint(xlarge) {
+          width: 33px;
+          height: 38px;
+        }
+      }
+    }
+  }
+
+  &-close {
+    @include close-btn;
+    position: relative;
+    flex-shrink: 0;
+    font-size: 20px;
+    color: $white;
+    width: 48px;
+    height: 48px;
+    left: 9px;
+
+    @include breakpoint(large) {
+      color: $white;
+      left: auto;
+      width: 62px;
+      height: 62px;
+      font-size: 24px;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.site-header.is-stuck,
+.site-header--body-offset {
+  @include breakpoint(large) {
+    .site-search-close {
+      color: $accent-color;
+    }
+
+    .site-search__form {
+      @include placeholder {
+        color: $dark-gray;
+      }
+    }
+
+    .site-search-input-group {
+      input {
+        border-color: $accent-color;
+        color: $black;
+      }
+    }
+  }
+}
+
+.js-search-active {
+  .site-nav__header {
+    @include breakpoint(tablet down) {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .site-nav__menu {
+    @include breakpoint(large) {
+      opacity: 0;
+    }
+  }
+
+  .site-search-trigger {
+    @include breakpoint(large) {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}

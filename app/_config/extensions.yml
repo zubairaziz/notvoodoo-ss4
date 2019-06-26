@@ -1,20 +1,39 @@
-# SilverStripe\Blog\Model\BlogPost:
-#   extensions:
-#     - BlogPostExtension
-#     - BlogNotificationExtension
+---
+Name: extensions
+---
 
-# SilverStripe\Blog\Model\Blog:
-#   extensions:
-#     - BlogExtension
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - app/client/cms/overrides.css
+  extra_requirements_javascript:
+    - app/client/cms/overrides.js
 
-# SilverStripe\Blog\Model\BlogCategory:
-#   extensions:
-#     - BlogCategoryExtension
+SilverStripe\Assets\File:
+  allowed_extensions:
+    - svg
+  app_categories:
+    image:
+      - svg
+    image/supported:
+      - svg
 
-# SilverStripe\ORM\DataObject:
-#   extensions:
-#     - DataObjectExtension
-
-Silverstripe\SiteConfig\SiteConfig:
+SilverStripe\CMS\Controllers\CMSMain:
   extensions:
-    - CustomSiteConfig
+    - App\Extension\CMSMain
+
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - App\Extension\SiteTree
+    - App\Extension\CallToAction
+
+SilverStripe\Forms\FieldList:
+  extensions:
+    - App\Extension\FieldList
+
+SilverStripe\Forms\FormField:
+  extensions:
+    - App\Extension\FormField
+
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - App\Extension\SiteConfig

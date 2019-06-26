@@ -1,0 +1,71 @@
+.stats-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .grid-container {
+    @include breakpoint(tablet) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.stats-items {
+  @include list-reset;
+  background: rgba(black, 0.6);
+  padding: 20px;
+  color: $white;
+
+  @include breakpoint(medium down) {
+    margin-left: -10px;
+    width: calc(100% + 20px);
+  }
+
+  @include breakpoint(tablet) {
+    padding: 40px;
+    width: 50%;
+    max-width: 450px;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding: 65px;
+    max-width: 570px;
+  }
+
+  .counter {
+    text-align: center;
+    padding: 10px 0;
+
+    @include breakpoint(tablet) {
+      padding: 20px 0;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding: 30px 0;
+    }
+
+    &__value {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.1;
+
+      @include breakpoint(tablet) {
+        font-size: 48px;
+      }
+
+      @include breakpoint(large) {
+        font-size: 64px;
+      }
+
+      @include breakpoint(xxlarge) {
+        font-size: 72px;
+      }
+    }
+
+    &__title {
+      max-width: 280px;
+      margin: auto;
+    }
+  }
+}

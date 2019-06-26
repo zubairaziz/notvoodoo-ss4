@@ -1,0 +1,267 @@
+@mixin list-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+@mixin text-truncate($overflow: ellipsis) {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: $overflow;
+    white-space: nowrap;
+}
+
+@mixin text-title {
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+@mixin text-line($bg-color: $medium-gray) {
+    overflow: hidden;
+
+    span {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            content: '';
+            background: $bg-color;
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            width: 100vw;
+        }
+
+        &:before {
+            right: calc(100% + 15px);
+        }
+
+        &:after {
+            left: calc(100% + 15px);
+        }
+    }
+}
+
+@mixin close-btn {
+    width: 2em;
+    height: 2em;
+
+    span {
+        font-size: 2em;
+        display: inline-block;
+        line-height: 0.6;
+    }
+}
+
+// Allows overriding anchor color styles to a custom base color that changes to the $accent-color on hover
+@mixin anchor-hover($base-color: $primary-light-color, $hover-override: false) {
+    color: $base-color;
+
+    &:hover {
+        @if $hover-override {
+            color: $hover-override;
+        } @else {
+            color: $accent-color;
+        }
+    }
+}
+
+@mixin arrow-hover($dir: right) {
+    [data-icon] {
+        display: inline-block;
+        transition: left 0.2s ease-in-out, right 0.2s ease-in-out, top 0.2s ease-in-out;
+        position: relative;
+        top: 0;
+
+        @if $dir == right {
+            margin-left: 5px;
+            right: 0;
+        }
+
+        @if $dir == left {
+            margin-right: 5px;
+            left: 0;
+        }
+    }
+
+    &:hover {
+        color: $accent-color;
+
+        [data-icon="arrow"] {
+            @if $dir == right {
+                right: -3px;
+            }
+
+            @if $dir == left {
+                left: -3px;
+            }
+        }
+
+        [data-icon="download"] {
+            top: 3px;
+        }
+    }
+}
+
+// Displays horizontal line borders between a list of .cell elements
+@mixin cell-borders($color: $medium-gray, $has-centered-content: false) {
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        top: 0;
+        left: -15px;
+        background: $color;
+        position: absolute;
+    }
+
+    &:first-child:before {
+        display: none;
+    }
+}
+
+@mixin panel-padding($top: true, $bottom: true) {
+    @if $top {
+        padding-top: map-get($panel-padding, small);
+    }
+
+    @if $bottom {
+        padding-bottom: map-get($panel-padding, small);
+    }
+
+    @include breakpoint(tablet) {
+        @if $top {
+            padding-top: map-get($panel-padding, tablet);
+        }
+
+        @if $bottom {
+            padding-bottom: map-get($panel-padding, tablet);
+        }
+    }
+
+    @include breakpoint(large) {
+        @if $top {
+            padding-top: map-get($panel-padding, large);
+        }
+
+        @if $bottom {
+            padding-bottom: map-get($panel-padding, large);
+        }
+    }
+
+    @include breakpoint(xlarge) {
+        @if $top {
+            padding-top: map-get($panel-padding, xlarge);
+        }
+
+        @if $bottom {
+            padding-bottom: map-get($panel-padding, xlarge);
+        }
+    }
+
+    @include breakpoint(xxlarge) {
+        @if $top {
+            padding-top: map-get($panel-padding, xxlarge);
+        }
+
+        @if $bottom {
+            padding-bottom: map-get($panel-padding, xxlarge);
+        }
+    }
+}
+
+@mixin panel-arrow($dir: up, $color: $primary-color) {
+    position: relative;
+
+    &:before {
+        content: '';
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border: solid transparent;
+        border-width: 30px;
+
+        @include breakpoint(large) {
+            border-width: 40px;
+        }
+    }
+
+    @if $dir == up or $dir == down {
+        &:before {
+            margin-left: -30px;
+
+            @include breakpoint(large) {
+                margin-left: -40px;
+            }
+        }
+    }
+
+    @if $dir == down {
+        &:before {
+            top: 0;
+            left: 50%;
+            border-top-color: $color;
+        }
+    }
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder { @content }
+    ::-moz-placeholder { @content }
+    :-ms-input-placeholder { @content }
+}
+
+@mixin colored-bullets($color: $primary-light-color) {
+    list-style: none;
+
+    li::before {
+        content: "\2022";
+        color: $color;
+        font-weight: bold;
+        display: inline-block;
+        width: 0.75em;
+        margin-left: -0.75em;
+        font-size: 1.2em;
+        line-height: 1;
+        vertical-align: top;
+    }
+}
+
+@mixin icon-sizer($name, $width, $height) {
+    $dimensions: map-get($sizes, $name);
+    $original-width: map-get($dimensions, width);
+    $original-height: map-get($dimensions, height);
+
+    @if $width != 'auto' and $height != 'auto' {
+        width: $width;
+        height: $height;
+    } @else {
+        @if $width == 'auto' {
+            width: (($height * $original-width) / $original-height);
+            height: $height;
+        }
+
+        @if $height == 'auto' {
+            width: $width;
+            height: (($width * $original-height) / $original-width);
+        }
+    }
+}
+
+@mixin ie-fix {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        @content;
+    }
+}

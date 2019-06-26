@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="40px" viewBox="0 0 32 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" transform="translate(-460.000000, -252.000000)" fill="#F2C744" fill-rule="nonzero">
+            <g id="Group-8">
+                <g id="Group-9" transform="translate(345.000000, 110.000000)">
+                    <path d="M131,142 C122.1648,142 115,148.268956 115,155.999455 C115,167.199019 131,181.198473 131,181.198473 C131,181.198473 147,167.199019 147,155.999455 C147,148.268956 139.8352,142 131,142 Z M131,162.101781 C127.685,162.101781 125,159.628006 125,156.573791 C125,153.519577 127.685,151.045802 131,151.045802 C134.315,151.045802 137,153.519577 137,156.573791 C137,159.628006 134.315,162.101781 131,162.101781 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

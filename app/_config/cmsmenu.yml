@@ -1,0 +1,45 @@
+---
+Name: cmsmenu
+---
+
+SilverStripe\Admin\LeftAndMain:
+  cms_background: '#013752'
+  cms_border_color: '#013752'
+  cms_color: '#fff'
+  cms_hover_background: '#013752'
+  cms_hover_color: currentColor
+  cms_active_background: '#002F47'
+  cms_active_color: currentColor
+  cms_drawer_background: '#013752'
+  cms_drawer_color: currentColor
+  cms_icon_color: currentColor
+  menu_groups:
+      Pages:
+        priority: 100
+        items:
+          - SilverStripe-CMS-Controllers-CMSPagesController
+      Files:
+        priority: 99
+        items:
+          - SilverStripe-AssetAdmin-Controller-AssetAdmin
+      Security:
+        priority: 95
+        items:
+          - SilverStripe-Admin-SecurityAdmin
+      Forms:
+        priority: 60
+        items:
+          - App-Admin-FormAdmin
+      Settings:
+        priority: 2
+        items:
+          - SilverStripe-SiteConfig-SiteConfigLeftAndMain
+      More:
+        priority: 1
+        icon_class: 'fas fa-folder'
+        items:
+          - SilverStripe-RedirectedURLs-Admin-RedirectedURLAdmin
+          - SilverStripe-CampaignAdmin-CampaignAdmin
+          - SilverStripe-Reports-ReportAdmin
+          - SilverStripe-VersionedAdmin-ArchiveAdmin
+          - Help

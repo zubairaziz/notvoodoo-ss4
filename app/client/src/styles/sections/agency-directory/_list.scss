@@ -1,0 +1,126 @@
+.agency-wrapper {
+  @include panel-padding($top: false);
+}
+
+.agency-item {
+  padding: 20px 0;
+
+  @include breakpoint(tablet) {
+    padding: 0;
+  }
+
+  &__inner {
+    position: relative;
+
+    @include breakpoint(tablet) {
+      min-height: 155px;
+      display: flex;
+      align-items: center;
+    }
+
+    @include breakpoint(xlarge) {
+      min-height: 170px;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @include breakpoint(tablet) {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include rfs(35);
+    font-weight: 300;
+    margin: 0;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &.has-logo &__title {
+    @include breakpoint(tablet) {
+      margin-left: 210px;
+      margin-top: 20px;
+    }
+
+    @include breakpoint(xlarge) {
+      margin-left: 220px;
+      margin-top: 35px;
+    }
+  }
+
+  .toggle-block__trigger {
+    @include breakpoint(tablet) {
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  &__quote {
+    margin-top: 40px;
+    background: $primary-color;
+    color: $white;
+    font-style: italic;
+    padding: 20px;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      padding: 30px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 40px;
+    }
+
+    [data-icon] {
+      color: rgba($white, 0.15);
+      flex-shrink: 0;
+
+      @include breakpoint(tablet) {
+        margin-right: 20px;
+      }
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.agency-programs {
+  padding: 40px 0 20px;
+
+  &__title {
+    @include rfs(25);
+    color: $black;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+
+  .btn {
+    max-width: none;
+    width: auto;
+    padding: 10px 30px;
+    margin: 10px;
+  }
+}

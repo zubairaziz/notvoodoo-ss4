@@ -1,0 +1,212 @@
+.page-header {
+  color: $white;
+  position: relative;
+  background-color: $primary-color;
+
+  .has-page-container .site-header--fixed + .site-wrapper & {
+    @include breakpoint(large) {
+      padding-bottom: 135px;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding-bottom: 165px;
+    }
+  }
+
+  &--bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+      content: '';
+      background-image: linear-gradient(to bottom, rgba(black, 0.7), transparent);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      @include breakpoint(large down) {
+        background-color: rgba(black, 0.1);
+      }
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 10;
+    padding: 30px 0;
+  }
+
+  &__columns {
+    &.has-columns {
+      @include breakpoint(large) {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .page-header__left {
+        @include breakpoint(large) {
+          width: 70%;
+          flex-shrink: 0;
+        }
+      }
+
+      .page-header__right {
+        @include breakpoint(large) {
+          display: flex;
+          justify-content: flex-end;
+          width: 25%;
+          flex-shrink: 0;
+          margin-top: 0;
+        }
+
+        @include breakpoint(xxlarge) {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  &__right {
+    margin-top: 30px;
+    max-width: 395px;
+  }
+
+  &__title {
+    @include rfs(65);
+    @include font-serif;
+    color: $white;
+    font-weight: 600;
+    line-height: 1.2;
+
+    @include breakpoint(tablet) {
+      line-height: 1.1;
+    }
+
+    @include breakpoint(xlarge) {
+      line-height: 1;
+    }
+  }
+
+  &__lead-in {
+    margin-top: 1rem;
+    max-width: 820px;
+    font-weight: 500;
+
+    &--large {
+      @include rfs(25);
+    }
+  }
+
+  &__ctas {
+    @include list-reset;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      margin-left: -10px;
+    }
+
+    li {
+      padding: 10px;
+      width: auto;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+
+      @include breakpoint(tablet) {
+        min-width: 240px;
+      }
+    }
+
+    &.has-multiple {
+      li {
+        width: auto;
+
+        @include breakpoint(medium down) {
+          width: 100%;
+        }
+
+        &.is-full-width {
+          width: 100%;
+        }
+      }
+    }
+
+    .btn {
+      max-width: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:not(.btn--fill) {
+        border-color: $white;
+        color: $primary-color;
+        background: $white;
+      }
+    }
+  }
+
+  &__links {
+    @include list-reset;
+
+    @include breakpoint(large) {
+      width: 100%;
+    }
+
+    @include breakpoint(xxlarge) {
+      min-width: 290px;
+      width: auto;
+    }
+
+    li {
+      padding: 7px 0;
+
+      &:not(:last-child):after {
+        content: '';
+        display: block;
+        border-bottom: 1px solid rgba($white, 0.7);
+        opacity: 0.6;
+        margin-top: 10px;
+
+        @include breakpoint(tablet) {
+          max-width: 290px;
+        }
+      }
+    }
+
+    a {
+      @include anchor-hover($white);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: baseline;
+
+      span {
+        color: $accent-color;
+        margin-right: 10px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+}
+
+.page-about .site-header--fixed + .site-wrapper .page-header {
+  @include breakpoint(xxlarge) {
+    padding-bottom: 150px;
+  }
+}

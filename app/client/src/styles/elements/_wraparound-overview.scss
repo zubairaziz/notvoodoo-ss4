@@ -1,0 +1,24 @@
+.element-wraparoundoverview {
+  .panel-content {
+    @include rfs(25);
+    font-weight: bold;
+  }
+}
+
+.wraparound-overview-checkmarks {
+  @include list-reset;
+
+  li {
+    display: flex;
+    align-items: baseline;
+    margin: 20px 0;
+  }
+
+  [data-icon] {
+    color: $secondary-color;
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+    flex-shrink: 0;
+  }
+}

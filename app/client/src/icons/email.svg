@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="21px" viewBox="0 0 29 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>close-envelope</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Leaders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-524.000000, -4657.000000)" fill="#4C9C2E" fill-rule="nonzero" id="Group-Copy-41">
+            <g transform="translate(441.000000, 4638.000000)">
+                <g id="close-envelope" transform="translate(83.000000, 19.000000)">
+                    <path d="M14.5,14.7 L10.9122857,11.5164 L0.654571429,20.4309 C1.02742857,20.7816 1.53078571,21 2.08592857,21 L26.9140714,21 C27.4671429,21 27.9684286,20.7816 28.3392143,20.4309 L18.0877143,11.5164 L14.5,14.7 Z" id="Shape"></path>
+                    <path d="M28.3454286,0.5691 C27.9725714,0.2163 27.4712857,0 26.9140714,0 L2.08592857,0 C1.53285714,0 1.03157143,0.2184 0.658714286,0.5733 L14.5,12.6 L28.3454286,0.5691 Z" id="Shape"></path>
+                    <polygon id="Shape" points="0 1.8438 0 19.2906 10.0112143 10.6659"></polygon>
+                    <polygon id="Shape" points="18.9887857 10.6659 29 19.2906 29 1.8375"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

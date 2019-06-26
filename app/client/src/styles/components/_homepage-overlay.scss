@@ -1,0 +1,113 @@
+.homepage-overlay-modal {
+  width: 100%;
+  padding: 20px;
+
+  @include breakpoint(tablet) {
+    padding: 30px;
+    width: 85vw;
+  }
+
+  @include breakpoint(large) {
+    padding: 40px;
+  }
+
+  @include breakpoint(xxlarge) {
+    padding: 50px;
+  }
+
+  .modal--content &.is-image,
+  .modal--content &.is-content {
+    max-width: 1160px;
+  }
+
+  .modal--content &.only-video {
+    padding: 0;
+  }
+
+  &.is-image-content {
+    @include breakpoint(large) {
+      width: 95vw;
+    }
+
+    .homepage-overlay {
+      @include breakpoint(large) {
+        display: flex;
+      }
+
+      &__image {
+        @include breakpoint(tablet down) {
+          margin-bottom: 30px;
+        }
+
+        @include breakpoint(large) {
+          flex-shrink: 0;
+          width: 50%;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  .modal--content &.has-video {
+    max-width: 1080px;
+  }
+}
+
+.homepage-overlay {
+  &__image {
+    display: block;
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 0;
+      width: 100%;
+      padding-top: percentage(9 / 16);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    & + .homepage-overlay__content {
+      margin-top: 20px;
+
+      @include breakpoint(large) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__ctas {
+    @include list-reset;
+    margin-top: 30px;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 30px -10px 0;
+    }
+
+    li {
+      padding-bottom: 15px;
+
+      @include breakpoint(tablet) {
+        min-width: 180px;
+        padding: 0 10px 15px;
+      }
+    }
+
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+}

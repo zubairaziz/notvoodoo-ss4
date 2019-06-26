@@ -1,0 +1,204 @@
+.element-wraparoundcomparisons {
+  @include panel-padding;
+}
+
+.comparisons-top {
+  @include font-serif;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+
+  @include breakpoint(large) {
+    margin-bottom: 1.5em;
+  }
+
+  &__label {
+    color: $secondary-color;
+    line-height: 1;
+    text-align: center;
+    width: 40%;
+    font-size: 20px;
+
+    @include breakpoint(tablet) {
+      text-align: left;
+      font-size: 24px;
+      padding-left: 30px;
+    }
+
+    @include breakpoint(large) {
+      font-size: 36px;
+    }
+
+    @include breakpoint(xxlarge) {
+      font-size: 55px;
+    }
+
+    &--left {
+      @include breakpoint(large) {
+        padding-left: 50px;
+      }
+
+      @include breakpoint(xxlarge) {
+        padding-left: 80px;
+      }
+    }
+  }
+
+  em {
+    font-weight: bold;
+  }
+}
+
+.comparisons-items {
+  border: 1px solid $secondary-color;
+  border-radius: 6px;
+  position: relative;
+
+  &:before,
+  &:after {
+    @include breakpoint(tablet) {
+      content: '';
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 156px;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:before {
+    background-image: url(~images/comparisons-ribbon-top.svg);
+    top: -150px;
+
+    @include breakpoint(large) {
+      top: -200px;
+    }
+
+    @include breakpoint(xlarge) {
+      top: -225px;
+    }
+
+    @include breakpoint(xxlarge) {
+      top: -275px;
+    }
+  }
+
+  &:after {
+    background-image: url(~images/comparisons-ribbon-bottom.svg);
+    top: calc(100% - 30px);
+  }
+}
+
+.comparisons-item {
+  background: $lighter-gray;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  &:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  &:not(:first-child):after {
+    content: '';
+    border-bottom: 1px solid $medium-gray;
+    width: calc(100% - 20px);
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include breakpoint(tablet) {
+      width: calc(100% - 40px);
+    }
+
+    @include breakpoint(large) {
+      width: calc(100% - 100px);
+    }
+
+    @include breakpoint(xxlarge) {
+      width: calc(100% - 160px);
+    }
+  }
+
+  &__value {
+    font-size: 12px;
+    width: 40%;
+    flex-shrink: 0;
+    padding: 10px;
+    margin: auto;
+
+    @include breakpoint(tablet) {
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    @include breakpoint(large) {
+      padding: 40px;
+      font-size: 16px;
+    }
+
+    @include breakpoint(xxlarge) {
+      font-size: 18px;
+      padding: 40px 60px;
+    }
+  }
+
+  &__label {
+    color: $dark-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 20%;
+    flex-shrink: 0;
+    align-self: stretch;
+    background: white;
+    position: relative;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      width: 146px;
+      font-size: 14px;
+    }
+
+    @include breakpoint(xxlarge) {
+      font-size: 18px;
+    }
+
+    &:before,
+    &:after {
+      @include breakpoint(tablet) {
+        content: '';
+        width: 6px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &:before {
+      left: -6px;
+      background: linear-gradient(to left, rgba(black, 0.2), transparent);
+    }
+
+    &:after {
+      right: -6px;
+      background: linear-gradient(to right, rgba(black, 0.2), transparent);
+    }
+  }
+}

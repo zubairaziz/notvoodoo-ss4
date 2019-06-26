@@ -1,0 +1,14 @@
+---
+Name: approutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'search//$Action': App\Search\SearchController
+    'formsubmit//$Action': App\Form\FormController
+    'subscription//$Action': App\Subscription\SubscriptionController
+    'downloadfile//$Action': App\Control\FileDownloadController
+    'team//$Action': App\Control\TeamController
+    'testimonials//$Action': App\Control\TestimonialController
