@@ -1,74 +1,78 @@
 .home-header {
-  @include breakpoint(tablet) {
-    min-height: 420px;
-    display: flex;
-    align-items: center;
-  }
-
-  @include breakpoint(large) {
-    min-height: 650px;
-  }
-
-  @include breakpoint(xxlarge) {
-    min-height: 850px;
-  }
-
-  @include breakpoint(1640px) {
-    min-height: 920px;
-  }
-
-  .page-header__title {
-    text-align: center;
-    color: $white;
-    line-height: 0.9;
-
-    @include breakpoint(large) {
-      @include rfs(100);
-    }
-
-    strong {
-      @include rfs(100);
-      @include font-sans-serif;
-      display: block;
-      color: rgba(white, 0.6);
-      font-weight: bold;
-      text-transform: uppercase;
-
-      @include breakpoint(large) {
-        @include rfs(150);
-      }
-    }
-  }
-
-  .page-header__inner {
-    @include breakpoint(large) {
-      margin-top: -50px;
-    }
-  }
-
-  .page-header__ctas {
-    justify-content: center;
-
     @include breakpoint(tablet) {
-      margin: 0;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
     }
 
-    .btn {
-      @include breakpoint(large) {
-        min-width: 300px;
-      }
+    @include breakpoint(large) {
+        min-height: 650px;
     }
 
-    .is-video-cta {
-      @include breakpoint(large) {
-        margin-top: 35px;
-      }
-
-      @include breakpoint(xxlarge) {
-        margin-top: 45px;
-        position: relative;
-        top: 20px;
-      }
+    @include breakpoint(large) {
+        height: 100vh;
     }
-  }
+
+    @include breakpoint(xxlarge) {
+        min-height: 850px;
+    }
+
+    @include breakpoint(1640px) {
+        min-height: 920px;
+    }
+
+    .page-header__title {
+        text-align: center;
+        color: $white;
+        line-height: 0.9;
+
+        @include breakpoint(large) {
+            @include rfs(100);
+        }
+
+        strong {
+            @include rfs(100);
+            @include font-sans-serif;
+            display: block;
+            color: rgba(white, 0.6);
+            font-weight: bold;
+            text-transform: uppercase;
+
+            @include breakpoint(large) {
+                @include rfs(150);
+            }
+        }
+    }
+
+    .page-header__inner {
+        @include breakpoint(large) {
+            margin-top: -50px;
+        }
+    }
+
+    .page-header__ctas {
+        justify-content: center;
+
+        @include breakpoint(tablet) {
+            margin: 0;
+        }
+
+        .btn {
+            @include breakpoint(large) {
+                min-width: 300px;
+            }
+        }
+
+        .is-video-cta {
+            @include breakpoint(large) {
+                margin-top: 35px;
+            }
+
+            @include breakpoint(xxlarge) {
+                margin-top: 45px;
+                position: relative;
+                top: 20px;
+            }
+        }
+    }
 }

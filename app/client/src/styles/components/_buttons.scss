@@ -1,80 +1,80 @@
 %base-btn {
-  display: block;
-  width: 100%;
-  border: 2px solid $accent-color;
-  border-radius: 35px;
-  color: $accent-color;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 15px 25px;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-  line-height: inherit;
+    display: block;
+    width: 100%;
+    border: 2px solid $accent-color;
+    border-radius: 35px;
+    color: $accent-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 25px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    line-height: inherit;
 
-  @include breakpoint(tablet) {
-    max-width: 285px;
-  }
+    @include breakpoint(tablet) {
+        max-width: 285px;
+    }
 
-  @include breakpoint(xlarge) {
-    padding: 17px 30px;
-  }
+    @include breakpoint(xlarge) {
+        padding: 17px 30px;
+    }
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 }
 
 .btn {
-  @extend %base-btn;
+    @extend %base-btn;
 
-  &:not(&--fill):not(:disabled):not(.is-loading):hover {
-    background: $accent-color;
-    border-color: $accent-color;
-    color: $white;
-  }
+    &:not(&--fill):not(:disabled):not(.is-loading):hover {
+        background: $accent-color;
+        border-color: $accent-color;
+        color: $white;
+    }
 
-  &.is-loading {
-    opacity: 1;
-    color: transparent;
-    border-color: transparent;
-    cursor: progress;
-  }
+    &.is-loading {
+        opacity: 1;
+        color: transparent;
+        border-color: transparent;
+        cursor: progress;
+    }
 
-  &--small {
-    border-radius: 8px;
-    padding: 8px 15px 6px;
-    font-size: 15px;
-    width: auto;
-  }
+    &--small {
+        border-radius: 8px;
+        padding: 8px 15px 6px;
+        font-size: 15px;
+        width: auto;
+    }
 
-  &--light {
-    border-color: $white;
-    color: $white;
-  }
+    &--light {
+        border-color: $white;
+        color: $white;
+    }
 
-  .cta-group--light & {
-    border-color: $white;
-    color: $white;
-  }
+    .cta-group--light & {
+        border-color: $white;
+        color: $white;
+    }
 }
 
 .btn--fill {
-  @extend %base-btn;
-  border-color: $accent-color;
-  background: $accent-color;
-  color: $white;
-
-  &:hover:not(:disabled):not(.is-loading) {
-    background: lighten($accent-color, 10%);
-    border-color: lighten($accent-color, 10%);
-    color: $white;
-  }
-
-  &.is-loading {
+    @extend %base-btn;
+    border-color: $accent-color;
     background: $accent-color;
-    color: $accent-color;
-    cursor: progress;
-    opacity: 0.8;
-  }
+    color: $white;
+
+    &:hover:not(:disabled):not(.is-loading) {
+        background: lighten($accent-color, 10%);
+        border-color: lighten($accent-color, 10%);
+        color: $white;
+    }
+
+    &.is-loading {
+        background: $accent-color;
+        color: $accent-color;
+        cursor: progress;
+        opacity: 0.8;
+    }
 }

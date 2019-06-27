@@ -1,159 +1,158 @@
 .date-range-field {
-  @include placeholder {
-    color: $accent-color;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
+    @include placeholder {
+        color: $accent-color;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 
-  background: $white;
-  border-radius: 25px;
-  padding: 11px 15px;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  position: relative;
-
-  @include ie-fix {
-    justify-content: space-around;
-  }
-
-  @include breakpoint(large) {
-    min-height: 62px;
-  }
-
-  &__date {
+    background: $white;
+    border-radius: 25px;
+    padding: 11px 15px;
+    min-height: 48px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: $accent-color;
+    justify-content: space-evenly;
     position: relative;
 
-    [data-icon] {
-      color: $accent-color;
-      margin-right: 10px;
-      flex-shrink: 0;
-
-      @include breakpoint(tablet down) {
-        width: 16px;
-        height: 16px;
-      }
+    @include ie-fix {
+        justify-content: space-around;
     }
-  }
 
-  &__display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: lighten($dark-gray, 5%);
-
-    &.is-touched {
-      color: $accent-color;
+    @include breakpoint(large) {
+        min-height: 62px;
     }
-  }
 
-  &__separator {
-    flex-shrink: 0;
-    width: 30px;
-    display: flex;
-    pointer-events: none;
+    &__date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $accent-color;
+        position: relative;
 
-    &:before {
-      content: '';
-      display: block;
-      height: 2rem;
-      border-left: 1px solid $medium-gray;
-      margin: auto;
+        [data-icon] {
+            color: $accent-color;
+            margin-right: 10px;
+            flex-shrink: 0;
+
+            @include breakpoint(tablet down) {
+                width: 16px;
+                height: 16px;
+            }
+        }
     }
-  }
 
-  .lightpick--inlined {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+    &__display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: lighten($dark-gray, 5%);
 
-  .datepicker {
-    cursor: pointer;
-    color: transparent;
-    background: transparent;
-    border: none;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+        &.is-touched {
+            color: $accent-color;
+        }
+    }
+
+    &__separator {
+        flex-shrink: 0;
+        width: 30px;
+        display: flex;
+        pointer-events: none;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 2rem;
+            border-left: 1px solid $medium-gray;
+            margin: auto;
+        }
+    }
+
+    .lightpick--inlined {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .datepicker {
+        cursor: pointer;
+        color: transparent;
+        background: transparent;
+        border: none;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
 }
 
 .lightpick {
-  @include font-sans-serif;
-
-  &__day {
-    font-size: 1rem;
-
-    &.is-today {
-      background-image: none;
-      color: $primary-color;
-      font-weight: bold;
-    }
-  }
-
-  &__apply-action {
-    display: none;
-  }
-
-  &__reset-action {
-    border: none;
-    font-weight: bold;
-    color: $primary-color;
-    background: none;
-    font-size: 15px;
-    padding: 0 15px 15px;
-
-    &:hover {
-      color: $accent-color;
-    }
-  }
-
-  @include ie-fix {
-    &__days-of-the-week {
-      display: flex;
-      flex: 1;
-    }
-
-    &__day-of-the-week {
-      width: 100%;
-    }
-
-    &__days {
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-    }
+    @include font-sans-serif;
 
     &__day {
-      width: 2.5rem;
+        font-size: 1rem;
+
+        &.is-today {
+            background-image: none;
+            color: $primary-color;
+            font-weight: bold;
+        }
     }
 
-    &__months-of-the-year-list {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-      width: 300px;
+    &__apply-action {
+        display: none;
     }
 
-    &__month-of-the-year {
-      width: 90px;
-      margin: 5px;
-      flex: 1;
+    &__reset-action {
+        border: none;
+        font-weight: bold;
+        color: $primary-color;
+        background: none;
+        font-size: 15px;
+        padding: 0 15px 15px;
+
+        &:hover {
+            color: $accent-color;
+        }
     }
-  }
+
+    @include ie-fix {
+        &__days-of-the-week {
+            display: flex;
+            flex: 1;
+        }
+
+        &__day-of-the-week {
+            width: 100%;
+        }
+
+        &__days {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+        }
+
+        &__day {
+            width: 2.5rem;
+        }
+
+        &__months-of-the-year-list {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            width: 300px;
+        }
+
+        &__month-of-the-year {
+            width: 90px;
+            margin: 5px;
+            flex: 1;
+        }
+    }
 }
-

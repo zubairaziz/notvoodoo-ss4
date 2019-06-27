@@ -2,12 +2,12 @@
 
 namespace App\Page;
 
-use App\Control\PaginatedPageControllerInterface;
 use PageController;
-use SilverStripe\Control\Director;
 use SilverStripe\Core\Convert;
-use SilverStripe\ORM\PaginatedList;
 use SilverStripe\View\ArrayData;
+use SilverStripe\Control\Director;
+use SilverStripe\ORM\PaginatedList;
+use App\Control\PaginatedPageControllerInterface;
 
 abstract class PaginatedPageController extends PageController implements PaginatedPageControllerInterface {
 	protected $pageLength = 6;

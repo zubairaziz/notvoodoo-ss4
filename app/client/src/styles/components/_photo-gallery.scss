@@ -1,84 +1,84 @@
 $photoRatio: percentage(375 / 520);
 
 .photo-gallery {
-  @include breakpoint(tablet) {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__photo {
-    display: block;
-    border: 2px solid $white;
-    overflow: hidden;
-
     @include breakpoint(tablet) {
-      width: 50%;
+        display: flex;
+        flex-wrap: wrap;
     }
 
-    @include breakpoint(large) {
-      width: percentage(1 / 3);
+    &__photo {
+        display: block;
+        border: 2px solid $white;
+        overflow: hidden;
+
+        @include breakpoint(tablet) {
+            width: 50%;
+        }
+
+        @include breakpoint(large) {
+            width: percentage(1 / 3);
+        }
+
+        @include breakpoint(xxlarge) {
+            width: 25%;
+        }
+
+        img {
+            width: 100%;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
     }
 
-    @include breakpoint(xxlarge) {
-      width: 25%;
+    &__block {
+        background: $primary-color;
+        flex: 1;
+        padding-top: $photoRatio;
+        position: relative;
+        min-width: 1px;
+
+        @include breakpoint(tablet) {
+            padding-top: $photoRatio / 2;
+        }
+
+        @include breakpoint(large) {
+            padding-top: $photoRatio / 3;
+        }
+
+        @include breakpoint(xlarge) {
+            padding-top: $photoRatio / 4;
+        }
+
+        &-inner {
+            border: 2px solid $white;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
-    img {
-      width: 100%;
-      transition: all 0.2s ease-in-out;
+    &__title {
+        @include rfs(100);
+        @include font-serif;
+        color: rgba(white, 0.2);
+        font-style: italic;
+        margin-bottom: 20px;
     }
-
-    &:hover {
-      img {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
-    }
-  }
-
-  &__block {
-    background: $primary-color;
-    flex: 1;
-    padding-top: $photoRatio;
-    position: relative;
-    min-width: 1px;
-
-    @include breakpoint(tablet) {
-      padding-top: $photoRatio / 2;
-    }
-
-    @include breakpoint(large) {
-      padding-top: $photoRatio / 3;
-    }
-
-    @include breakpoint(xlarge) {
-      padding-top: $photoRatio / 4;
-    }
-
-    &-inner {
-      border: 2px solid $white;
-      padding: 20px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  &__title {
-    @include rfs(100);
-    @include font-serif;
-    color: rgba(white, 0.2);
-    font-style: italic;
-    margin-bottom: 20px;
-  }
 }
 
 .lg-backdrop.in {
-  opacity: 0.9;
+    opacity: 0.9;
 }

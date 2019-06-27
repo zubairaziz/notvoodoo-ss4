@@ -1,257 +1,257 @@
 .site-footer {
-  background: #013752;
-  color: $white;
-  position: relative;
-  z-index: 2;
+    background: darken($black, 8);
+    color: $white;
+    position: relative;
+    z-index: 2;
 
-  a {
-    color: currentColor;
+    a {
+        color: currentColor;
 
-    &:hover {
-      color: $accent-color;
-    }
-  }
-
-  &__top-wrapper {
-    padding: 30px 0;
-    text-align: center;
-
-    @include breakpoint(tablet) {
-      padding: 45px 0;
-      display: flex;
+        &:hover {
+            color: $accent-color;
+        }
     }
 
-    @include breakpoint(large) {
-      padding: 60px 0;
+    &__top-wrapper {
+        padding: 30px 0;
+        text-align: center;
+
+        @include breakpoint(tablet) {
+            padding: 45px 0;
+            display: flex;
+        }
+
+        @include breakpoint(large) {
+            padding: 60px 0;
+        }
+
+        @include breakpoint(xlarge) {
+            padding: 80px 0;
+        }
     }
 
-    @include breakpoint(xlarge) {
-      padding: 80px 0;
-    }
-  }
-
-  &__bottom {
-    background: #002f47;
-    text-align: center;
-  }
-
-  &__bottom-wrapper {
-    padding: 20px 0;
-
-    @include breakpoint(tablet) {
-      padding: 40px 0;
-    }
-  }
-
-  &__logo {
-    display: inline-block;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &__info {
-    @include breakpoint(tablet) {
-      width: 260px;
-      flex-shrink: 0;
-    }
-  }
-
-  &__social {
-    @include breakpoint(tablet) {
-      width: calc(100% - 260px);
-      border-left: 1px solid rgba(white, 0.4);
-      margin-left: 30px;
-      padding-left: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    &__bottom {
+        background: darken($black, 15);
+        text-align: center;
     }
 
-    @include breakpoint(large) {
-      margin-left: 80px;
-      padding-left: 80px;
+    &__bottom-wrapper {
+        padding: 20px 0;
+
+        @include breakpoint(tablet) {
+            padding: 40px 0;
+        }
     }
-  }
+
+    &__logo {
+        display: inline-block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        @include breakpoint(tablet) {
+            width: 260px;
+            flex-shrink: 0;
+        }
+    }
+
+    &__social {
+        @include breakpoint(tablet) {
+            width: calc(100% - 260px);
+            border-left: 1px solid rgba(white, 0.4);
+            margin-left: 30px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @include breakpoint(large) {
+            margin-left: 80px;
+            padding-left: 80px;
+        }
+    }
 }
 
 .site-footer-contact {
-  @include rfs(25);
-  font-weight: bold;
-  text-align: center;
-  padding-top: 15px;
+    @include rfs(25);
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
 
-  [data-icon] {
-    color: $accent-color;
-    display: block;
-    margin: 0 auto 10px;
-  }
+    [data-icon] {
+        color: $accent-color;
+        display: block;
+        margin: 0 auto 10px;
+    }
 
-  & > div {
-    margin: 20px 0;
-  }
+    & > div {
+        margin: 20px 0;
+    }
 }
 
 .site-footer-subscribe {
-  margin: 30px 0;
-  max-width: 700px;
-
-  @include breakpoint(tablet) {
-    text-align: left;
-    margin-top: 0;
-  }
-
-  &__title {
-    @include rfs(40);
-    color: $white;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .input-group {
-    @include placeholder {
-      color: $dark-gray;
-    }
-    width: 100%;
+    margin: 30px 0;
+    max-width: 700px;
 
     @include breakpoint(tablet) {
-      display: flex;
+        text-align: left;
+        margin-top: 0;
     }
 
-    input {
-      padding: 12px;
-      width: 100%;
-      display: block;
-      margin-bottom: 15px;
-      background: $white;
-      border: 1px solid $medium-gray;
-
-      @include breakpoint(tablet) {
-        border-right: none;
-        height: 50px;
-        margin: 0;
-        border-top-left-radius: 100px;
-        border-bottom-left-radius: 100px;
-        padding-left: 20px;
-      }
-
-      @include breakpoint(xxlarge) {
-        height: 60px;
-        padding: 15px 20px;
-      }
+    &__title {
+        @include rfs(40);
+        color: $white;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
     }
 
-    button {
-      @include breakpoint(tablet) {
-        border-radius: 0;
-        border-top-right-radius: 100px;
-        border-bottom-right-radius: 100px;
-        height: 50px;
-        padding: 0 10px 0 0;
-        width: 130px;
-      }
+    .input-group {
+        @include placeholder {
+            color: $dark-gray;
+        }
+        width: 100%;
 
-      @include breakpoint(xlarge) {
-        min-width: 130px;
-      }
+        @include breakpoint(tablet) {
+            display: flex;
+        }
 
-      @include breakpoint(xxlarge) {
-        min-width: 200px;
-        height: 60px;
-      }
+        input {
+            padding: 12px;
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+            background: $white;
+            border: 1px solid $medium-gray;
+
+            @include breakpoint(tablet) {
+                border-right: none;
+                height: 50px;
+                margin: 0;
+                border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+                padding-left: 20px;
+            }
+
+            @include breakpoint(xxlarge) {
+                height: 60px;
+                padding: 15px 20px;
+            }
+        }
+
+        button {
+            @include breakpoint(tablet) {
+                border-radius: 0;
+                border-top-right-radius: 100px;
+                border-bottom-right-radius: 100px;
+                height: 50px;
+                padding: 0 10px 0 0;
+                width: 130px;
+            }
+
+            @include breakpoint(xlarge) {
+                min-width: 130px;
+            }
+
+            @include breakpoint(xxlarge) {
+                min-width: 200px;
+                height: 60px;
+            }
+        }
     }
-  }
 
-  .pristine-error,
-  .form-error-message {
-    margin-top: 10px;
-  }
+    .pristine-error,
+    .form-error-message {
+        margin-top: 10px;
+    }
 }
 
 .social-media-list {
-  @include list-reset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 -10px;
-
-  @include breakpoint(tablet) {
-    justify-content: flex-start;
-  }
-
-  li {
-    display: inline-flex;
+    @include list-reset;
+    display: flex;
     align-items: center;
-    margin: 0 12px;
-  }
+    justify-content: center;
+    margin: 0 -10px;
 
-  a {
-    @include text-hide;
-    display: block;
-    color: inherit;
-  }
+    @include breakpoint(tablet) {
+        justify-content: flex-start;
+    }
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        margin: 0 12px;
+    }
+
+    a {
+        @include text-hide;
+        display: block;
+        color: inherit;
+    }
 }
 
 .site-footer-nav {
-  ul {
-    @include list-reset;
+    ul {
+        @include list-reset;
 
-    @include breakpoint(tablet) {
-      display: flex;
-      justify-content: center;
+        @include breakpoint(tablet) {
+            display: flex;
+            justify-content: center;
+        }
     }
-  }
 
-  li {
-    margin: 10px 0;
+    li {
+        margin: 10px 0;
 
-    @include breakpoint(tablet) {
-      margin: 10px 15px;
+        @include breakpoint(tablet) {
+            margin: 10px 15px;
+        }
     }
-  }
 }
 
 .site-footer-legal {
-  margin: 30px 0;
+    margin: 30px 0;
 
-  @include breakpoint(tablet) {
-    display: flex;
-    justify-content: center;
-    line-height: 1;
-  }
-
-  div {
     @include breakpoint(tablet) {
-      padding: 0 15px;
-
-      &:not(:first-child) {
-        border-left: 1px solid $white;
-      }
+        display: flex;
+        justify-content: center;
+        line-height: 1;
     }
-  }
+
+    div {
+        @include breakpoint(tablet) {
+            padding: 0 15px;
+
+            &:not(:first-child) {
+                border-left: 1px solid $white;
+            }
+        }
+    }
 }
 
 .site-footer-links {
-  @include list-reset;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
+    @include list-reset;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 
-  li {
-    padding: 0 15px;
-    line-height: 1;
+    li {
+        padding: 0 15px;
+        line-height: 1;
 
-    &:not(:first-child) {
-      border-left: 1px solid $accent-color;
+        &:not(:first-child) {
+            border-left: 1px solid $accent-color;
+        }
     }
-  }
 
-  a {
-    color: $accent-color;
+    a {
+        color: $accent-color;
 
-    &:hover {
-      color: $primary-color;
+        &:hover {
+            color: $primary-color;
+        }
     }
-  }
 }

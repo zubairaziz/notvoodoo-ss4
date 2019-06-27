@@ -1,31 +1,31 @@
 .page-breadcrumbs {
-  @include list-reset;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
+    @include list-reset;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
 
-  @include breakpoint(tablet) {
-    font-size: 16px;
-  }
-
-  li {
-    text-transform: uppercase;
-
-    &:last-child {
-      color: lighten($white, 10%);
+    @include breakpoint(tablet) {
+        font-size: 16px;
     }
 
-    &.delimiter {
-      margin: 0 10px;
+    li {
+        text-transform: uppercase;
+
+        &:last-child {
+            color: lighten($white, 10%);
+        }
+
+        &.delimiter {
+            margin: 0 10px;
+        }
     }
-  }
 
-  a {
-    @include anchor-hover(currentColor);
-    font-weight: normal;
-  }
+    a {
+        @include anchor-hover(currentColor);
+        font-weight: normal;
+    }
 
-  .page-header & {
-    margin-bottom: 0.75rem;
-  }
+    .page-header & {
+        margin-bottom: 0.75rem;
+    }
 }

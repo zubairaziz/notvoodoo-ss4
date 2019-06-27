@@ -1,20 +1,20 @@
 [data-paginated-list] {
-  @include list-reset;
+    @include list-reset;
 }
 
 [data-paginated-list-nav] {
-  @include panel-padding($top: false);
-  text-align: center;
-  padding-top: 40px;
+    @include panel-padding($top: false);
+    text-align: center;
+    padding-top: 40px;
 
-  .btn {
-    max-width: 250px;
-    margin: 0 15px;
-  }
+    .btn {
+        max-width: 250px;
+        margin: 0 15px;
+    }
 
-  .btn-wrapper {
-    margin: 30px auto 0;
-    display: flex;
-    justify-content: center;
-  }
+    .btn-wrapper {
+        margin: 30px auto 0;
+        display: flex;
+        justify-content: center;
+    }
 }

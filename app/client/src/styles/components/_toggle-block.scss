@@ -1,86 +1,86 @@
 .toggle-block {
-  &__inner {
-    border-bottom: 1px solid $light-gray;
-  }
-
-  &__trigger {
-    background: $accent-color;
-    width: 90px;
-    height: 60px;
-    border-top-left-radius: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $white;
-    margin-left: auto;
-
-    @include breakpoint(medium down) {
-      transform-origin: right bottom;
-      transform: scale(0.8);
+    &__inner {
+        border-bottom: 1px solid $light-gray;
     }
 
-    &:hover {
-      background: lighten($accent-color, 10%);
+    &__trigger {
+        background: $accent-color;
+        width: 90px;
+        height: 60px;
+        border-top-left-radius: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        margin-left: auto;
+
+        @include breakpoint(medium down) {
+            transform-origin: right bottom;
+            transform: scale(0.8);
+        }
+
+        &:hover {
+            background: lighten($accent-color, 10%);
+        }
+
+        [data-icon] {
+            margin-left: 1em;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &.is-active [data-icon] {
+            transform: rotate(90deg);
+        }
     }
 
-    [data-icon] {
-      margin-left: 1em;
-      transition: transform 0.2s ease-in-out;
+    &__target {
+        background: $lighter-gray;
     }
 
-    &.is-active [data-icon] {
-      transform: rotate(90deg);
-    }
-  }
+    &__content {
+        padding: 20px 20px 80px;
+        position: relative;
 
-  &__target {
-    background: $lighter-gray;
-  }
+        @include breakpoint(tablet) {
+            padding: 40px 40px 90px;
+        }
 
-  &__content {
-    padding: 20px 20px 80px;
-    position: relative;
-
-    @include breakpoint(tablet) {
-      padding: 40px 40px 90px;
+        @include breakpoint(xlarge) {
+            padding: 50px 60px 90px;
+        }
     }
 
-    @include breakpoint(xlarge) {
-      padding: 50px 60px 90px;
-    }
-  }
+    &__close {
+        @include rfs(18);
+        background: $medium-gray;
+        color: $white;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        width: 180px;
+        border-top-left-radius: 8px;
+        font-weight: bold;
+        padding-left: 15px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
 
-  &__close {
-    @include rfs(18);
-    background: $medium-gray;
-    color: $white;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    height: 60px;
-    width: 180px;
-    border-top-left-radius: 8px;
-    font-weight: bold;
-    padding-left: 15px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+        &:hover {
+            opacity: 0.8;
+        }
 
-    &:hover {
-      opacity: 0.8;
+        span {
+            width: 40px;
+            height: 40px;
+            background: $white;
+            color: $medium-gray;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-right: 0.5em;
+        }
     }
-
-    span {
-      width: 40px;
-      height: 40px;
-      background: $white;
-      color: $medium-gray;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      margin-right: 0.5em;
-    }
-  }
 }

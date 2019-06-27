@@ -1,150 +1,150 @@
 .item-footer-nav {
-  @include panel-padding($top: false);
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  margin: 40px 0;
-
-  @include breakpoint(tablet) {
-    margin: 50px 0;
-  }
-
-  &:before {
-    content: '';
-    border-top: 1px solid $medium-gray;
-    width: calc(100% - 90px);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: calc(-50% + 45px);
-  }
-
-  [data-icon="arrow"] {
-    width: 36px;
-    height: 26px;
-
-    @include breakpoint(tablet) {
-      margin-bottom: 15px;
-    }
-  }
-
-  a {
-    display: inline-block;
-  }
-
-  &__prev,
-  &__next {
-    margin-top: -35px;
+    @include panel-padding($top: false);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    min-width: 40px;
+    z-index: 1;
+    margin: 40px 0;
 
     @include breakpoint(tablet) {
-      margin-top: -13px;
-    }
-
-    span {
-      display: none;
-
-      @include breakpoint(tablet) {
-        display: block;
-      }
-    }
-  }
-
-  &__prev {
-    text-align: left;
-
-    a {
-      @include arrow-hover(left);
-    }
-
-    [data-icon] {
-      transform: scale(-1, -1);
-    }
-  }
-
-  &__return {
-    min-width: 75%;
-    text-align: center;
-    margin-top: -33px;
-    position: relative;
-
-    @include breakpoint(medium down) {
-      font-size: 14px;
-    }
-
-    @include breakpoint(tablet) {
-      min-width: 60%;
-      margin-top: -53px;
+        margin: 50px 0;
     }
 
     &:before {
-      content: '';
-      background: $white;
-      width: 64px;
-      height: 44px;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 0;
-
-      @include breakpoint(tablet) {
-        width: 86px;
-        height: 66px;
-      }
+        content: '';
+        border-top: 1px solid $medium-gray;
+        width: calc(100% - 90px);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: calc(-50% + 45px);
     }
 
-    a:hover {
-      color: $accent-color;
+    [data-icon='arrow'] {
+        width: 36px;
+        height: 26px;
 
-      [data-icon] {
-        transform: rotate(-15deg);
-      }
+        @include breakpoint(tablet) {
+            margin-bottom: 15px;
+        }
     }
-
-    &-icon {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
-      background: $accent-color;
-      color: $white;
-      border-radius: 50%;
-      position: relative;
-      z-index: 1;
-
-      @include breakpoint(tablet) {
-        width: 66px;
-        height: 66px;
-        margin-bottom: 15px;
-      }
-    }
-
-    [data-icon] {
-      width: 50%;
-      height: 50%;
-      transition: transform 0.2s ease-in-out;
-
-      @include breakpoint(tablet) {
-        width: 38px;
-        height: 31px;
-        position: relative;
-        top: -2px;
-      }
-    }
-  }
-
-  &__next {
-    text-align: right;
 
     a {
-      @include arrow-hover;
+        display: inline-block;
     }
-  }
+
+    &__prev,
+    &__next {
+        margin-top: -35px;
+        position: relative;
+        min-width: 40px;
+
+        @include breakpoint(tablet) {
+            margin-top: -13px;
+        }
+
+        span {
+            display: none;
+
+            @include breakpoint(tablet) {
+                display: block;
+            }
+        }
+    }
+
+    &__prev {
+        text-align: left;
+
+        a {
+            @include arrow-hover(left);
+        }
+
+        [data-icon] {
+            transform: scale(-1, -1);
+        }
+    }
+
+    &__return {
+        min-width: 75%;
+        text-align: center;
+        margin-top: -33px;
+        position: relative;
+
+        @include breakpoint(medium down) {
+            font-size: 14px;
+        }
+
+        @include breakpoint(tablet) {
+            min-width: 60%;
+            margin-top: -53px;
+        }
+
+        &:before {
+            content: '';
+            background: $white;
+            width: 64px;
+            height: 44px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+
+            @include breakpoint(tablet) {
+                width: 86px;
+                height: 66px;
+            }
+        }
+
+        a:hover {
+            color: $accent-color;
+
+            [data-icon] {
+                transform: rotate(-15deg);
+            }
+        }
+
+        &-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            background: $accent-color;
+            color: $white;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+
+            @include breakpoint(tablet) {
+                width: 66px;
+                height: 66px;
+                margin-bottom: 15px;
+            }
+        }
+
+        [data-icon] {
+            width: 50%;
+            height: 50%;
+            transition: transform 0.2s ease-in-out;
+
+            @include breakpoint(tablet) {
+                width: 38px;
+                height: 31px;
+                position: relative;
+                top: -2px;
+            }
+        }
+    }
+
+    &__next {
+        text-align: right;
+
+        a {
+            @include arrow-hover;
+        }
+    }
 }

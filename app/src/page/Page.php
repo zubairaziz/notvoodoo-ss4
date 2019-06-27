@@ -1,8 +1,5 @@
 <?php
 
-use App\Page\EventsPage;
-use App\Page\CareersPage;
-use App\Page\ContactPage;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\Forms\TextField;
@@ -123,6 +120,8 @@ class Page extends SiteTree {
 		if ($this->HeaderBackground()->exists()) {
 			$classes[] = 'page-header--bg';
 		}
+
+		$classes[] = sprintf('%s-header', strtolower($this->URLSegment));
 
 		return join(' ', $classes);
 	}

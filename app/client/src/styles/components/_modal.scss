@@ -1,189 +1,189 @@
 .tingle-enabled {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .tingle-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  visibility: hidden;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  background: rgba(black, 0.75);
-  opacity: 0;
-  user-select: none;
-  cursor: pointer;
-  transition: opacity .2s ease;
-  display: flex;
-  width: 100%;
-
-  @include breakpoint(tablet) {
-    display: flex;
-  }
-
-  &--noOverlayClose {
-    cursor: default;
-  }
-
-  &--visible {
-    visibility: visible;
-    opacity: 1;
-
-    .tingle-modal-box {
-      transform: scale(1);
-    }
-  }
-
-  &--overflow {
-    overflow-y: scroll;
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-
-  &__close {
-    position: absolute;
-    top: -60px;
-    right: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 1000;
-    padding: 0;
-    width: 45px;
-    height: 45px;
-    background-color: $accent-color;
-    color: $white;
-    line-height: 1;
-    cursor: pointer;
-    transition: color .3s ease;
-    border-radius: 50%;
-
-    @include breakpoint(large) {
-      width: 60px;
-      height: 60px;
-      right: 20px;
-      top: -30px;
-    }
-
-    &:hover:not(:disabled) {
-      background: lighten($accent-color, 10%);
-    }
-  }
-
-  &__closeIcon {
-    font-size: 36px;
-    width: 30px;
-    height: 30px;
-    margin: auto;
-    display: flex;
+    visibility: hidden;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    line-height: 1;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(black, 0.75);
+    opacity: 0;
+    user-select: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    display: flex;
+    width: 100%;
 
-    @-moz-document url-prefix() {
-      & {
-        margin-top: 6px;
-      }
+    @include breakpoint(tablet) {
+        display: flex;
     }
 
-    @include breakpoint(large) {
-      height: 45px;
-      width: 45px;
-      font-size: 50px;
+    &--noOverlayClose {
+        cursor: default;
     }
-  }
 
-  &__closeLabel {
-    display: none;
-  }
+    &--visible {
+        visibility: visible;
+        opacity: 1;
 
-  &.modal--ajax {
-    .tingle-modal__close {
-      display: none;
+        .tingle-modal-box {
+            transform: scale(1);
+        }
     }
-  }
+
+    &--overflow {
+        overflow-y: scroll;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    &__close {
+        position: absolute;
+        top: -60px;
+        right: 10px;
+        z-index: 1000;
+        padding: 0;
+        width: 45px;
+        height: 45px;
+        background-color: $accent-color;
+        color: $white;
+        line-height: 1;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        border-radius: 50%;
+
+        @include breakpoint(large) {
+            width: 60px;
+            height: 60px;
+            right: 20px;
+            top: -30px;
+        }
+
+        &:hover:not(:disabled) {
+            background: lighten($accent-color, 10%);
+        }
+    }
+
+    &__closeIcon {
+        font-size: 36px;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+
+        // @-moz-document url-prefix() {
+        //     & {
+        //         margin-top: 6px;
+        //     }
+        // }
+
+        @include breakpoint(large) {
+            height: 45px;
+            width: 45px;
+            font-size: 50px;
+        }
+    }
+
+    &__closeLabel {
+        display: none;
+    }
+
+    &.modal--ajax {
+        .tingle-modal__close {
+            display: none;
+        }
+    }
 }
 
 .tingle-modal-box {
-  position: relative;
-  flex-shrink: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 100%;
-  opacity: 1;
-  cursor: auto;
-  transition: opacity .3s cubic-bezier(.175, .885, .32, 1.275);
-  transform: scale(.8);
-  padding: 0 10px;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    opacity: 1;
+    cursor: auto;
+    transition: opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.8);
+    padding: 0 10px;
 
-  @include breakpoint(tablet) {
-    width: auto;
-  }
-
-  &__content {
-    @include breakpoint(large) {
-      width: calc(100% - 80px);
-      margin: auto;
+    @include breakpoint(tablet) {
+        width: auto;
     }
-  }
+
+    &__content {
+        @include breakpoint(large) {
+            width: calc(100% - 80px);
+            margin: auto;
+        }
+    }
 }
 
 .modal {
-  &--loading {
-    &:before {
-      content: 'Loading...';
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $white;
-      display: block;
-    }
-  }
-
-  &--video {
-    .tingle-modal-box {
-      min-width: 75%;
-
-      @include breakpoint(xlarge) {
-        min-width: 60%;
-      }
+    &--loading {
+        &:before {
+            content: 'Loading...';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
+            display: block;
+        }
     }
 
-    .tingle-modal-box__content {
-      position: relative;
+    &--video {
+        .tingle-modal-box {
+            min-width: 75%;
 
-      &:after {
-        content: '';
-        display: block;
-        height: 0;
-        width: 100%;
-        padding-top: percentage(9 / 16);
-      }
+            @include breakpoint(xlarge) {
+                min-width: 60%;
+            }
+        }
+
+        .tingle-modal-box__content {
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                height: 0;
+                width: 100%;
+                padding-top: percentage(9 / 16);
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
+    &--content {
+        .tingle-modal-box__content {
+            display: flex;
+            justify-content: center;
+        }
 
-  &--content {
-    .tingle-modal-box__content {
-      display: flex;
-      justify-content: center;
+        .modal-content-wrapper {
+            max-width: 1340px;
+            border-radius: 8px;
+            background: $white;
+            min-width: 1px;
+        }
     }
-
-    .modal-content-wrapper {
-      max-width: 1340px;
-      border-radius: 8px;
-      background: $white;
-      min-width: 1px;
-    }
-  }
 }

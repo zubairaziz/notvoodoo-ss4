@@ -3,14 +3,14 @@ Name: cmsmenu
 ---
 
 SilverStripe\Admin\LeftAndMain:
-  cms_background: '#013752'
-  cms_border_color: '#013752'
-  cms_color: '#fff'
-  cms_hover_background: '#013752'
+  cms_background: '#414141'
+  cms_border_color: '#1e1e1e'
+  cms_color: '#fefefe'
+  cms_hover_background: '#333333'
   cms_hover_color: currentColor
-  cms_active_background: '#002F47'
+  cms_active_background: '#282828'
   cms_active_color: currentColor
-  cms_drawer_background: '#013752'
+  cms_drawer_background: '#3e3e3e'
   cms_drawer_color: currentColor
   cms_icon_color: currentColor
   menu_groups:
@@ -22,14 +22,14 @@ SilverStripe\Admin\LeftAndMain:
         priority: 99
         items:
           - SilverStripe-AssetAdmin-Controller-AssetAdmin
-      Security:
-        priority: 95
-        items:
-          - SilverStripe-Admin-SecurityAdmin
       Forms:
         priority: 60
         items:
           - App-Admin-FormAdmin
+      Security:
+        priority: 3
+        items:
+          - SilverStripe-Admin-SecurityAdmin
       Settings:
         priority: 2
         items:

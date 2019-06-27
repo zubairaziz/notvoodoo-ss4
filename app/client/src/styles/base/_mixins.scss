@@ -96,7 +96,7 @@
     &:hover {
         color: $accent-color;
 
-        [data-icon="arrow"] {
+        [data-icon='arrow'] {
             @if $dir == right {
                 right: -3px;
             }
@@ -106,7 +106,7 @@
             }
         }
 
-        [data-icon="download"] {
+        [data-icon='download'] {
             top: 3px;
         }
     }
@@ -218,16 +218,22 @@
 }
 
 @mixin placeholder {
-    ::-webkit-input-placeholder { @content }
-    ::-moz-placeholder { @content }
-    :-ms-input-placeholder { @content }
+    ::-webkit-input-placeholder {
+        @content;
+    }
+    ::-moz-placeholder {
+        @content;
+    }
+    :-ms-input-placeholder {
+        @content;
+    }
 }
 
 @mixin colored-bullets($color: $primary-light-color) {
     list-style: none;
 
     li::before {
-        content: "\2022";
+        content: '\2022';
         color: $color;
         font-weight: bold;
         display: inline-block;

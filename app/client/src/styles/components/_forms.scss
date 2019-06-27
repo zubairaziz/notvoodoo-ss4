@@ -1,350 +1,351 @@
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
 textarea {
-  outline: none;
-  appearance: none;
-  border-radius: 0;
-  line-height: normal;
-  background: transparent;
+    outline: none;
+    appearance: none;
+    border-radius: 0;
+    line-height: normal;
+    background: transparent;
 
-  &::-ms-clear {
-    width: 0;
-    height: 0;
-  }
+    &::-ms-clear {
+        width: 0;
+        height: 0;
+    }
 }
 
 fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .styled-input-group {
-  @include placeholder {
-    color: darken($medium-gray, 10%);
-  }
-  display: flex;
+    @include placeholder {
+        color: darken($medium-gray, 10%);
+    }
+    display: flex;
 
-  input {
-    padding: 13px 20px;
-    width: 100%;
-    display: block;
-    border: 2px solid $accent-color;
-    border-right: none;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    min-height: 48px;
-    transition: border-color 0.2s ease-in-out;
-    text-align: center;
+    input {
+        padding: 13px 20px;
+        width: 100%;
+        display: block;
+        border: 2px solid $accent-color;
+        border-right: none;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        min-height: 48px;
+        transition: border-color 0.2s ease-in-out;
+        text-align: center;
 
-    @include breakpoint(large) {
-      min-height: 62px;
+        @include breakpoint(large) {
+            min-height: 62px;
+        }
+
+        &:focus,
+        &:hover {
+            border-color: lighten($accent-color, 15%);
+        }
     }
 
-    &:focus,
-    &:hover {
-      border-color: lighten($accent-color, 15%);
-    }
-  }
-
-  &--light-border input {
-    border-color: $medium-gray;
-  }
-
-  &--no-border input {
-    border-color: transparent;
-  }
-
-  button {
-    background: $accent-color;
-    border-color: $accent-color;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    color: $white;
-    flex-shrink: 0;
-    width: 60px;
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover:not(:disabled) {
-      background: lighten($accent-color, 10%);
+    &--light-border input {
+        border-color: $medium-gray;
     }
 
-    [data-icon] {
-      width: 18px;
-      height: 18px;
-      margin-left: -5px;
+    &--no-border input {
+        border-color: transparent;
     }
-  }
+
+    button {
+        background: $accent-color;
+        border-color: $accent-color;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        color: $white;
+        flex-shrink: 0;
+        width: 60px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover:not(:disabled) {
+            background: lighten($accent-color, 10%);
+        }
+
+        [data-icon] {
+            width: 18px;
+            height: 18px;
+            margin-left: -5px;
+        }
+    }
 }
 
 .pristine-error,
 .form-error-message {
-  color: $alert-color;
+    color: $alert-color;
 }
 
 .form-session-message {
-  font-weight: bold;
-  margin-bottom: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
 }
 
 form .field {
-  &.has-error {
-    input.text {
-      border-color: $alert-color;
-    }
+    &.has-error {
+        input.text {
+            border-color: $alert-color;
+        }
 
-    textarea.textarea {
-      border-color: $alert-color;
-    }
+        textarea.textarea {
+            border-color: $alert-color;
+        }
 
-    .file-input-placeholder {
-      border-color: $alert-color;
+        .file-input-placeholder {
+            border-color: $alert-color;
+        }
     }
-  }
 }
 
 .form--styled {
-  @include placeholder {
-    color: darken($medium-gray, 10%);
-  }
-
-  input[type=text],
-  input[type=email],
-  input[type=password],
-  input[type=tel],
-  .file-input-placeholder {
-    border: none;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid $medium-gray;
-    padding: 12px 0;
-    height: 45px;
-    transition: border-color 0.4s ease-in-out;
-
-    &:focus:not([readonly]) {
-      border-color: $accent-color;
-    }
-  }
-
-  textarea {
-    min-height: 150px;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid $black;
-    resize: none;
-    display: block;
-    transition: border-color 0.4s ease-in-out;
-
-    &:focus {
-      border-color: $accent-color;
-    }
-  }
-
-  [type=submit] {
-    @extend .btn--fill;
-    cursor: pointer;
-    max-width: 300px;
-
-    @include breakpoint(large) {
-      padding: 15px;
-    }
-  }
-
-  fieldset {
-    margin-bottom: 1rem;
-
-    @include breakpoint(large) {
-      margin-bottom: 2rem;
-    }
-
-    @include breakpoint(xlarge) {
-      margin-bottom: 3rem;
-    }
-  }
-
-  .field {
-    position: relative;
-
-    &__wrapper {
-      margin-top: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    &.text,
-    &.dropdown,
-    &.file {
-      label {
+    @include placeholder {
         color: darken($medium-gray, 10%);
-        left: 0;
-        position: absolute;
-        bottom: 8px;
-        transition: all 0.2s;
-        z-index: 10;
-        pointer-events: none;
-      }
     }
 
-    &.textarea {
-      .field__wrapper {
-        margin-top: 1.2rem;
-      }
-    }
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='tel'],
+    .file-input-placeholder {
+        border: none;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $medium-gray;
+        padding: 12px 0;
+        height: 45px;
+        transition: border-color 0.4s ease-in-out;
 
-    &.is-focused {
-      &.text,
-      &.dropdown,
-      &.file {
-        label {
-          color: $primary-color;
-          bottom: 40px;
-          font-size: 0.8em;
-          font-weight: 600;
-        }
-      }
-    }
-
-    &.optionset {
-      li {
-        label {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          margin: 0;
-          line-height: 1.3;
-          cursor: pointer;
-          min-height: 45px;
-          word-break: break-all;
-
-          &:hover:before {
+        &:focus:not([readonly]) {
             border-color: $accent-color;
-          }
-
-          &:before {
-            background: white;
-            content: '';
-            width: 1.5em;
-            height: 1.5em;
-            border: 1px solid $medium-gray;
-            border-radius: 50%;
-            margin-right: 0.8em;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
-          }
         }
+    }
 
-        input[type=radio] {
-          position: absolute;
-          visibility: hidden;
+    textarea {
+        min-height: 150px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $black;
+        resize: none;
+        display: block;
+        transition: border-color 0.4s ease-in-out;
 
-          &:checked ~ label:before {
-            background: $accent-color;
+        &:focus {
             border-color: $accent-color;
-          }
         }
-      }
     }
 
-    &.checkboxset li,
-    &.checkbox {
-      label {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        margin: 0;
-        line-height: 1.3;
+    [type='submit'] {
+        @extend .btn--fill;
         cursor: pointer;
-        min-height: 45px;
-        word-break: break-all;
+        max-width: 300px;
 
-        &:hover:before {
-          border-color: $accent-color;
+        @include breakpoint(large) {
+            padding: 15px;
+        }
+    }
+
+    fieldset {
+        margin-bottom: 1rem;
+
+        @include breakpoint(large) {
+            margin-bottom: 2rem;
         }
 
-        &:before {
-          background: white;
-          content: '';
-          width: 1.5em;
-          height: 1.5em;
-          border: 1px solid $medium-gray;
-          border-radius: 6px;
-          margin-right: 0.8em;
-          transition: all 0.2s ease;
-          flex-shrink: 0;
+        @include breakpoint(xlarge) {
+            margin-bottom: 3rem;
         }
-      }
     }
 
-    input[type=checkbox] {
-      position: absolute;
-      visibility: hidden;
+    .field {
+        position: relative;
 
-      &:checked ~ label:before {
-        background: $accent-color;
-        border-color: $accent-color;
-      }
+        &__wrapper {
+            margin-top: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &.text,
+        &.dropdown,
+        &.file {
+            label {
+                color: darken($medium-gray, 10%);
+                left: 0;
+                position: absolute;
+                bottom: 8px;
+                transition: all 0.2s;
+                z-index: 10;
+                pointer-events: none;
+            }
+        }
+
+        &.textarea {
+            .field__wrapper {
+                margin-top: 1.2rem;
+            }
+        }
+
+        &.is-focused {
+            &.text,
+            &.dropdown,
+            &.file {
+                label {
+                    color: $primary-color;
+                    bottom: 40px;
+                    font-size: 0.8em;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &.optionset {
+            li {
+                label {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    margin: 0;
+                    line-height: 1.3;
+                    cursor: pointer;
+                    min-height: 45px;
+                    word-break: break-all;
+
+                    &:hover:before {
+                        border-color: $accent-color;
+                    }
+
+                    &:before {
+                        background: white;
+                        content: '';
+                        width: 1.5em;
+                        height: 1.5em;
+                        border: 1px solid $medium-gray;
+                        border-radius: 50%;
+                        margin-right: 0.8em;
+                        transition: all 0.2s ease;
+                        flex-shrink: 0;
+                    }
+                }
+
+                input[type='radio'] {
+                    position: absolute;
+                    visibility: hidden;
+
+                    &:checked ~ label:before {
+                        background: $accent-color;
+                        border-color: $accent-color;
+                    }
+                }
+            }
+        }
+
+        &.checkboxset li,
+        &.checkbox {
+            label {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                margin: 0;
+                line-height: 1.3;
+                cursor: pointer;
+                min-height: 45px;
+                word-break: break-all;
+
+                &:hover:before {
+                    border-color: $accent-color;
+                }
+
+                &:before {
+                    background: white;
+                    content: '';
+                    width: 1.5em;
+                    height: 1.5em;
+                    border: 1px solid $medium-gray;
+                    border-radius: 6px;
+                    margin-right: 0.8em;
+                    transition: all 0.2s ease;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        input[type='checkbox'] {
+            position: absolute;
+            visibility: hidden;
+
+            &:checked ~ label:before {
+                background: $accent-color;
+                border-color: $accent-color;
+            }
+        }
+
+        &.confirmedpassword {
+            #Password_CurrentPassword_Holder,
+            #Password_Password_Holder {
+                margin-bottom: 2.5em;
+            }
+        }
+
+        &.file {
+            position: relative;
+
+            input[type='file'] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .file-input-placeholder {
+                cursor: pointer;
+                position: relative;
+                padding-right: 65px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+
+                &:hover:after {
+                    background-color: lighten($accent-color, 10%);
+                }
+
+                &:after {
+                    content: '';
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxwYXRoIGQ9Ik0xNC44NTYgNy40Mkw3LjUuMDMuMTQ0IDcuNDJsLjgzNy44MTJMNi45MjMgMi4yNnYxMy42ODFoMS4xNTRWMi4yNjFsNS45NDIgNS45N3pNMS4xNTQgMTguODQxaDEyLjY5MlYyMEgxLjE1NHoiLz4KICA8L2c+Cjwvc3ZnPgo=)
+                        no-repeat 50% $accent-color;
+                    color: white;
+                    width: 52px;
+                    height: 44px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
     }
 
-    &.confirmedpassword {
-      #Password_CurrentPassword_Holder,
-      #Password_Password_Holder {
-        margin-bottom: 2.5em;
-      }
-    }
-
-    &.file {
-      position: relative;
-
-      input[type=file] {
+    .pristine-error,
+    .message {
         position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .file-input-placeholder {
-        cursor: pointer;
-        position: relative;
-        padding-right: 65px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-
-        &:hover:after {
-          background-color: lighten($accent-color, 10%);
-        }
-
-        &:after {
-          content: '';
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-          background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxwYXRoIGQ9Ik0xNC44NTYgNy40Mkw3LjUuMDMuMTQ0IDcuNDJsLjgzNy44MTJMNi45MjMgMi4yNnYxMy42ODFoMS4xNTRWMi4yNjFsNS45NDIgNS45N3pNMS4xNTQgMTguODQxaDEyLjY5MlYyMEgxLjE1NHoiLz4KICA8L2c+Cjwvc3ZnPgo=) no-repeat 50% $accent-color;
-          color: white;
-          width: 52px;
-          height: 44px;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-        }
-      }
+        top: calc(100% + 5px);
+        font-size: 14px;
+        color: $alert-color;
     }
-  }
 
-  .pristine-error,
-  .message {
-    position: absolute;
-    top: calc(100% + 5px);
-    font-size: 14px;
-    color: $alert-color;
-  }
-
-  .form-error-message {
-    margin-bottom: 20px;
-  }
+    .form-error-message {
+        margin-bottom: 20px;
+    }
 }
 
 .form-success-message {
-  font-weight: bold;
+    font-weight: bold;
 }
